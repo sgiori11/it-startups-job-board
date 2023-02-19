@@ -1,3 +1,25 @@
-.darkest {
-color: #3900B1;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+
+:root {
+        /* Font colors */
+        --fontPrimary: #000000;
+        --fontSecondary: #000000;
+        --subheading: #787878;
+      
+        /* Background colors */
+        --bgDark: #3900B1;
+        --bgMedium: #E5D9FF;
+        --bgLight: #EDEFFF;
+      
+        /* Button colors */
+        --btnPrimary: #3900B1;
+        --btnSecondary: #FFFFFF;
+        --btnForm: #FDFCFF;
 }
+
+* {
+    font-family: 'Manrope', sans-serif;
+  }
+
+ 

@@ -1,52 +1,37 @@
-.heading2Xl {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
-  }
-  
-  .headingXl {
-    font-size: 2rem;
-    line-height: 1.3;
-    font-weight: 800;
-    letter-spacing: -0.05rem;
-    margin: 1rem 0;
-  }
-  
-  .headingLg {
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin: 1rem 0;
-  }
-  
-  .headingMd {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-
-  .borderCircle {
-    border-radius: 9999px;
-  }
-  
-  .colorInherit {
+.colorInherit {
     color: inherit;
-  }
-  
-  .padding1px {
-    padding-top: 1px;
-  }
-  
-  .list {
+}
+
+.list {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
+}
   
-  .listItem {
+ .listItem {
     margin: 0 0 1.25rem;
-  }
+}
+
+.heading2Xl {
+    font-size: 3rem;
+    color: var(--fontPrimary);
+    line-height: 1.2;
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+    margin: 1rem 0;
+}
   
-  .lightText {
-    color: #666;
-  }
+.headingXl {
+    font-size: 2.2rem;
+    color: var(--fontSecondary);
+    line-height: 1.3;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+  
+.subheading {
+    font-size: 1rem;
+    color: var(--subheading);
+    font-weight: 600; 
+}  
+ 
