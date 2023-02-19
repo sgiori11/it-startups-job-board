@@ -3,4 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  // Other Next.js configuration options...
+  nextConfig,
+  paths: {
+    "@/*": ["components/*"]
+  }
+};
+
