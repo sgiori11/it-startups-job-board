@@ -1,0 +1,24 @@
+.button {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: normal;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-align: inherit;
+    text-decoration: none;
+    vertical-align: baseline;
+    
+    
+    background-color: var(--bgDark);
+    font-size: 1rem;
+    padding: 0.6em 2.4em;
+    color: white;
+}

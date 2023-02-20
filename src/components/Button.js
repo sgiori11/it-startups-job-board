@@ -1,9 +1,8 @@
-const Button = ({ text, onClick }) => {
+export default function Button ({ text, onClick, className }) {
     return (
-        <button onClick={onClick}>
+        <button className={className} onClick={onClick}>
             {text}
         </button>
     );
 };
 
-export default Button;
