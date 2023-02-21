@@ -13,9 +13,9 @@
 }
 
 .heading2Xl {
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: var(--fontPrimary);
-    line-height: 1.2;
+    line-height: 1.4;
     font-weight: 200;
     letter-spacing: 0.05rem;
     margin: 1rem 0;

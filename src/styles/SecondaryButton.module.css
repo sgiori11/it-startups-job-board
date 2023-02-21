@@ -17,11 +17,13 @@
     vertical-align: baseline;
     
     
+    
     background-color: white;
-    border: 2px solid var(--bgDark);
-    font-size: 1rem;
-    font-weight: 400;
-    padding: 0.6em 2.4em;
+    outline: 2px solid var(--bgDark);
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 0px;
+    width: 180px;
     color: black;
     ;
 }
