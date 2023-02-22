@@ -28,6 +28,13 @@
     font-weight: 400;
     margin: 1rem 0;
 }
+
+.headingL {
+    font-size: 1.2rem;
+    color: var(--fontSecondary);
+    font-weight: 500;
+
+}
   
 .subheading {
     font-size: 1rem;

@@ -1,24 +1,26 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import SecondaryButton from './SecondaryButton';
+import styles from '../styles/Navbar.module.css'
+import logo from '../../public/images/logo.svg'
+import utilStyles from '../styles/utils.module.css'
+
 
 export default function NavBar() {
-  const handleSecondaryBtnClick = () => {
-    alert("Clicked secondary");
-  }
-
+  
     return(
-        <div>
+        <nav className={styles.nav}>
           <Image 
             priority 
-            src="/images/logo.svg"
-            height={20}
-            width={20}
+            className={styles.logo}
+            src={logo}
             alt="logo"
            />
-           <Link href="/pages/about">About</Link>
-           <Link href="/pages/contact">Contact</Link>
-           <Link href="/pages/startups">Startups</Link>
-        </div>
+           <Link
+           className={styles.navLink + ' ' + utilStyles.headingL}
+           href="/pages/about">About</Link>
+           <Link 
+           className={styles.navLink + ' ' + utilStyles.headingL}
+           href="/pages/startups">Startups</Link>
+        </nav>
     );
 };

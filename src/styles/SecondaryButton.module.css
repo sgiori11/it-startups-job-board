@@ -25,5 +25,13 @@
     padding: 12px 0px;
     width: 180px;
     color: black;
+    transition: 0.2s ease-in-out;
     ;
 }
+
+.button:hover {
+    background-color: rgb(1, 151, 151);
+    color: white;
+    outline: 2px solid rgb(1, 151, 151);
+     
+ }
