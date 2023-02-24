@@ -1,0 +1,85 @@
+.jobBoard {
+   margin-top: 10em;
+   display: flex;
+   justify-content: center;
+}
+
+.jobBoardContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+.h2 {
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 2em;
+    position: relative;
+}
+
+.h2::before {
+    width: 50px;
+    height: 50px;
+    content: " ";
+    position: absolute;
+    top: 10px;
+    left: -60px;
+    background: url(/images/lightning.svg)
+        no-repeat center;
+}
+
+.searchBar {
+    margin-bottom: 1em;
+    position: relative;
+    text-align: center;
+    height: 60px;
+    width: 100vw;
+    max-width: 1000px;
+    border: 1px solid #cfd4f2a9;
+    background: linear-gradient(40deg, #cfd4f2a9 24%, rgba(0, 0, 0, 0) 100%);
+
+}
+
+.searchBar::placeholder {
+    color: black;
+    font-size: 1.2em;
+    background: url(/images/search.svg)
+        no-repeat 38%;
+}   
+
+
+@media only screen and (max-width: 875px) {
+    .searchBar::placeholder {
+        background: url(/images/search.svg)
+        no-repeat 30%;
+    }
+
+    .searchBar {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .jobBoard {
+        margin-top: 5em;
+    }
+
+    .h2 {
+        font-size: 2.2em;
+    }
+    
+    .h2::before {
+       display: none;
+    }
+
+    .searchBar::placeholder {
+        color: black;
+        font-size: 1.1em;
+        background: url(/images/search.svg)
+            no-repeat 25%;
+    }   
+}

@@ -43,3 +43,8 @@
 }  
  
 
+@media only screen and (max-width: 680px) {
+    .heading2Xl {
+        font-size: 2.8em;
+    }
+}

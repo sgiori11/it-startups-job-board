@@ -30,8 +30,8 @@
 }
 
 .button:hover {
-    background-color: rgb(1, 151, 151);
+    background-color: rgb(0, 0, 0);
     color: white;
-    outline: 2px solid rgb(1, 151, 151);
+    outline: 2px solid black;
      
  }

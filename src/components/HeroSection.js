@@ -29,7 +29,7 @@ const HeroSection = () => {
        </div>
         
         <section className={styles.uspContainer}>
-        <p style={{textAlign: 'center', fontWeight: '500'}}>
+        <p style={{textAlign: 'center', fontWeight: '500', marginBottom: 30}}>
             What you can look forward to as a startup employee in Italy:
         </p>
           <div className={styles.uspSection}>
@@ -54,6 +54,8 @@ const HeroSection = () => {
           </div>
         </section>
         <Image 
+          priority
+          alt='faded purple SVG background'
           src={purpleBg}
           className={styles.uspsBg}
         />
