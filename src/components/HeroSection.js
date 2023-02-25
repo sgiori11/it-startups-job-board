@@ -3,12 +3,13 @@ import styles from '../styles/HeroSection.module.css'
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
 import Image from 'next/image';
+import Link from 'next/link';
 import purpleBg from '../../public/images/purplebg.svg'
 
 
 const HeroSection = () => {
     const handlePrimaryBtnClick = () => {
-        alert("Clicked primary");
+        <Link href='./Form' />;
     };
 
     const handleSecondaryBtnClick = () => {

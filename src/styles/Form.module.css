@@ -1,0 +1,80 @@
+.formContainer {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progressBarContainer {
+    margin: 4em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progressBarOne {
+    position: relative;
+    border: 2px solid #3900B1;
+    background-color: #3900B1;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.progressBarOne::before {
+    position: absolute;
+    content: "1";
+    color: white;
+    font-weight: 600;
+}
+
+.break {
+    height: 3px;
+    background-color: #D7D6FF;
+    width: 9em;
+}
+
+.progressBarTwo {
+    position: relative;
+    border: 2px solid #3900B1;
+    background-color: #EDEFFF;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.progressBarTwo::before {
+    position: absolute;
+    content: "2";
+    color: #3900B1;
+    font-weight: 600;
+}
+
+.progressBarThree {
+    position: relative;
+    border: 2px solid #3900B1;
+    background-color: #EDEFFF;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.progressBarThree::before {
+    position: absolute;
+    content: "3";
+    color: #3900B1;
+    font-weight: 500;
+}
+

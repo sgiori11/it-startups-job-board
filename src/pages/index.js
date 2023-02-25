@@ -3,12 +3,12 @@ import Head from 'next/head'
 import styles from '../styles/utils.module.css'
 import Layout from '@/components/layout';
 import JobBoard from '@/components/JobBoard';
+import Form from '@/components/Form';
 
 
 export default function Home() {
   return (
     <Layout>
-    <div>
       <Head>
         <title>Italian Startup Jobs</title>
         <meta name="description" content="" />
@@ -17,6 +17,6 @@ export default function Home() {
       </Head>
       <HeroSection />
       <JobBoard />
-   </div>
+      <Form />
    </Layout>
   )};
