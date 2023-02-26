@@ -1,8 +1,19 @@
+.formBody {
+    background-color: #F4F6FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .formContainer {
-    border: 2px solid blue;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 2em !important;
+    margin: 0 12em !important;
+    border-radius: 4px;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.08);
 }
 
 .progressBarContainer {
@@ -11,6 +22,7 @@
     justify-content: center;
     align-items: center;
 }
+
 
 .progressBarOne {
     position: relative;
@@ -78,6 +90,29 @@
     font-weight: 500;
 }
 
+.stepComplete {
+    position: relative;
+    border: 2px solid #3900B1;
+    background-color: #3900B1;
+}
+
+.stepComplete::before {
+    content: "";
+    background: url(/images/checkmark.svg) 
+      no-repeat center;
+    width: 45%;
+    height: 100%;
+    background-size: contain;
+    transition: all 0.5s ease;
+}
+
+.breakComplete {
+    height: 3px;
+    background-color: #3900B1;
+    width: 9em;
+    transition: all 1s ease;
+}
+
 .stepOneContainer {
     min-width: 600px;
 }
@@ -114,6 +149,12 @@
     color: #ACACAC;
 }
 
+.input[type="text"]:focus {
+    outline: 2px solid #0500D6;
+    box-shadow: none;
+    background-color: #FAFAFF;
+}
+
 .label {
     display: block;
     margin-bottom: 8px;
@@ -145,41 +186,45 @@
     color: #ACACAC;
 }
 
+.textArea:focus {
+    outline: 2px solid #0500D6;
+    box-shadow: none;
+}
+
 .input[type="file"] {
     position: relative;
     border: 1px dashed #0500D6;
-    min-height: 120px;
+    min-height: 140px;
     background-color: #F8F8FF;
     margin-bottom: 3em;
   }
   
-  
-.input[type=file]::before {
+  .input[type="file"]::before {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 120px;
-    background-color: transparent;
+    min-height: 140px;
     content: '';
     background: url(/images/Upload2.svg) 
     no-repeat center;
-    background-color: #F8F8FF;
     color: black;
     cursor: pointer;
     position: absolute;
     top: 0;
     left: 0;
-  }
+  } 
 
-  .input[type=file]::file-selector-button, 
-  .input[type=file]::-webkit-file-upload-button {
+  .input[type="file"]::file-selector-button, 
+  .input[type="file"]::-webkit-file-upload-button {
     visibility: hidden;
+    position: absolute;
   }
 
-.input[type=file]::file-selector-button:after {
-   content: "test";
-  }
+  /*.input[type="file"]::before.dragover {
+    background-color: #0500D6 !important;
+    border: 4px solid red;
+} */
 
   .stepOneSection {
     display: flex;
@@ -188,15 +233,26 @@
   }
 
 .nextStepBtn {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
     color: white;
     border-radius: 3px;
     background-color: #18020C;
-    padding: 1.1em 1.6em;
+    padding: 1em 1.5em;
+    margin-bottom: 3em;
 }
 
 .nextStepBtn::after {
     content: " >";
     font-size: 1.1em;
+}
+
+.nextStepBtn:hover {
+    transform: translateX(5px);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
 }

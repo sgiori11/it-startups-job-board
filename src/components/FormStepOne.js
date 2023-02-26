@@ -1,9 +1,35 @@
+import { useState } from 'react';
 import styles from '../styles/Form.module.css';
 import Link from 'next/link';
+import Button from './Button';
 
-export default function FormStepOne() {
-    return(
-    <section className={styles.stepOneSection}>
+export default function FormStepOne({ handleClick, stepOneComplete }) {
+
+  const handleDragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    e.target.classList.add("dragover");
+    console.log(e.target);
+  };
+  
+  const handleDragLeave = (e) => {
+    console.log("drag leave");
+    e.preventDefault();
+    e.stopPropagation();
+    e.target.classList.remove("dragover");
+  };
+  
+  const onClick = (e) => {
+    e.preventDefault();
+    handleClick();
+  };
+
+  return(
+    <section className={
+        stepOneComplete
+        ? styles.hidden 
+        : styles.stepOneSection
+      }>
      <div className={styles.stepOneContainer}>
         <div className={styles.spanContainer}>
         <span className={styles.span}>
@@ -50,10 +76,12 @@ export default function FormStepOne() {
       <div className={styles.logoContainer}>
         <label className={styles.label} htmlFor="logo">Company logo:</label>
         <input className={styles.input} type="file" id="logo" name="company-logo" accept=".jpg, .png" 
-        title="Select a file"/>
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+       />
       </div>
     </div>
-    <button className={styles.nextStepBtn}>Add details</button>
+    <Button className={styles.nextStepBtn} onClick={onClick} text="Add details" />
    </section>
  )
 };

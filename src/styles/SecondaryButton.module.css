@@ -22,8 +22,7 @@
     outline: 2px solid var(--bgDark);
     font-size: 1.1rem;
     font-weight: 500;
-    padding: 12px 0px;
-    width: 180px;
+    padding: 12px 45px;
     color: black;
     transition: 0.2s ease-in-out;
     ;

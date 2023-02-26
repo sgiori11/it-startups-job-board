@@ -1,9 +1,7 @@
 import HeroSection from '@/components/HeroSection'
 import Head from 'next/head'
-import styles from '../styles/utils.module.css'
 import Layout from '@/components/layout';
 import JobBoard from '@/components/JobBoard';
-import Form from '@/components/Form';
 
 
 export default function Home() {
@@ -17,6 +15,5 @@ export default function Home() {
       </Head>
       <HeroSection />
       <JobBoard />
-      <Form />
    </Layout>
   )};

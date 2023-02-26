@@ -25,7 +25,7 @@ const HeroSection = () => {
         </h1>
         <div className={styles.btnsContainer}>
           <PrimaryButton text="Find a Job" onClick={handlePrimaryBtnClick} />
-          <SecondaryButton text="Post a Job" onClick={handleSecondaryBtnClick} />
+          <SecondaryButton text="Post a Job" />
         </div>
        </div>
         
