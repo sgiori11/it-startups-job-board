@@ -78,7 +78,125 @@
     font-weight: 500;
 }
 
-.input {
-    background-color: white;
+.stepOneContainer {
+    min-width: 600px;
 }
 
+.spanContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.span {
+    flex: 1;
+    display: inline-block;
+}
+
+.span:nth-of-type(1) {
+    margin-right: 2em;
+  }
+
+.input {
+    background-color: white;
+    width: 100%;
+    min-width: 200px;
+    min-height: 50px;
+    border: 1px solid #d3d3d3;
+    box-shadow: inset 0px 1px 18px -4px rgba(0, 0, 0, 0.031);
+    border-radius: 2px;
+}
+
+.input::placeholder {
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: #ACACAC;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.06em;
+}
+
+.input[type="text"], .textArea {
+    padding-left: 10px;
+  }
+  
+.input[type="file"], .textArea {
+    width: 100%;
+    border: 1px solid #C7C7C7;
+  }
+
+.textArea {
+    background-color: white;
+    padding-top: 10px;
+    min-height: 100px;
+    box-shadow: inset 0px 1px 18px -4px rgb(0, 0, 0, 0.031);
+    border-radius: 2px;
+    margin-bottom: 1.5em;
+}
+
+.textArea::placeholder {
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: #ACACAC;
+}
+
+.input[type="file"] {
+    position: relative;
+    border: 1px dashed #0500D6;
+    min-height: 120px;
+    background-color: #F8F8FF;
+    margin-bottom: 3em;
+  }
+  
+  
+.input[type=file]::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    background-color: transparent;
+    content: '';
+    background: url(/images/Upload2.svg) 
+    no-repeat center;
+    background-color: #F8F8FF;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .input[type=file]::file-selector-button, 
+  .input[type=file]::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+.input[type=file]::file-selector-button:after {
+   content: "test";
+  }
+
+  .stepOneSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+.nextStepBtn {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+    border-radius: 3px;
+    background-color: #18020C;
+    padding: 1.1em 1.6em;
+}
+
+.nextStepBtn::after {
+    content: " >";
+    font-size: 1.1em;
+}
