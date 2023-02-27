@@ -3,25 +3,25 @@ import styles from '../styles/Form.module.css';
 import Link from 'next/link';
 import Button from './Button';
 
-export default function FormStepOne({ handleClick, stepOneComplete }) {
+export default function FormStepOne({ handleStepOne, stepOneComplete }) {
+
+  const [fileDragged, setFileDragged] = useState(false);
 
   const handleDragOver = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    e.target.classList.add("dragover");
-    console.log(e.target);
+    setFileDragged(true);
   };
   
   const handleDragLeave = (e) => {
-    console.log("drag leave");
     e.preventDefault();
     e.stopPropagation();
-    e.target.classList.remove("dragover");
+    setFileDragged(false);
   };
   
   const onClick = (e) => {
     e.preventDefault();
-    handleClick();
+    handleStepOne();
   };
 
   return(
@@ -67,17 +67,17 @@ export default function FormStepOne({ handleClick, stepOneComplete }) {
         </span>
       </div>
       <div>
-         <label className={styles.label} htmlFor="job-desc">Listing summary:</label>
+         <label className={styles.label} htmlFor="job-summary">Listing summary:</label>
          <textarea className={styles.textArea} 
-            id="job-desc" 
-            name="job-desc" 
+            id="job-summary" 
+            name="job-summary" 
             placeholder='Summarize the opportunity in 340 characters or less.'></textarea>
       </div>
       <div className={styles.logoContainer}>
         <label className={styles.label} htmlFor="logo">Company logo:</label>
-        <input className={styles.input} type="file" id="logo" name="company-logo" accept=".jpg, .png" 
-          onDragOver={handleDragOver}
-          onDragLeave={handleDragLeave}
+        <input className={ fileDragged ? styles.fileSelected + ' ' + styles.input : styles.input }
+           type="file" id="logo" name="company-logo" accept=".jpg, .png" 
+          onDragOver={handleDragOver} onChange={handleDragOver} onDragLeave={handleDragLeave}
        />
       </div>
     </div>
