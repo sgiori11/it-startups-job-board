@@ -1,10 +1,7 @@
-import { createContext, useContext, useState } from 'react';
 import styles from '../styles/Form.module.css';
 import Link from 'next/link';
 import Button from './Button';
 
-
-export const FormStepOneContext = createContext();
 
 export default function FormStepOne({ handleStepOne, stepOneComplete }) {
 
@@ -16,7 +13,6 @@ export default function FormStepOne({ handleStepOne, stepOneComplete }) {
   const [companyLogo, setCompanyLogo] = useState('');
   const [fileDragged, setFileDragged] = useState(false);
   
-  const stepOneData = { jobTitle, companyName, contractType, location, jobSummary, companyLogo };
 
   const handleChange = (e) => {
     switch (e.target.name) {
@@ -61,7 +57,6 @@ export default function FormStepOne({ handleStepOne, stepOneComplete }) {
   };
 
   return(
-    <FormStepOneContext.Provider value={stepOneData}>
      <section className={
         stepOneComplete
         ? styles.hidden 
@@ -134,6 +129,5 @@ export default function FormStepOne({ handleStepOne, stepOneComplete }) {
     </div>
     <Button className={styles.nextStepBtn} onClick={onClick} text="Add details" />
      </section>
-   </FormStepOneContext.Provider>
  )
 };

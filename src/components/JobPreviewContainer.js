@@ -1,14 +1,8 @@
 import styles from '../styles/JobContainer.module.css'
 import Image from 'next/image'
-import { useContext } from 'react';
-import { FormStepOneContext } from './FormStepOne';
 
 
-const JobPreviewContainer = () => {
-    const stepOneData = useContext(FormStepOneContext);
-
-    console.log('step one data', stepOneData); 
-    const { jobTitle, companyName, contractType, location, jobSummary, companyLogo } = stepOneData;
+const JobPreviewContainer = ({ }) => {
     
     return (
         <div className={styles.container}>
