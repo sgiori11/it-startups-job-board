@@ -77,7 +77,9 @@ export default function Form() {
                 }></div>
             </div>
             <form>
-              <FormStepOne handleStepOne={handleStepOne} stepOneComplete={stepOneComplete} />
+              <FormStepOne 
+                  handleStepOne={handleStepOne} 
+                  stepOneComplete={stepOneComplete} />
               <FormStepTwo 
                   handleStepTwo={handleStepTwo} 
                   handleStepTwoBack={handleStepTwoBack}

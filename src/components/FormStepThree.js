@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from '../styles/Form.module.css';
 import Link from 'next/link';
 import Button from './Button';
+import JobPreviewContainer from './JobPreviewContainer';
  
 export default function FormStepThree({ stepOneComplete, stepTwoComplete, stepThreeComplete, handleStepThree, handleStepThreeBack }) {
 
@@ -23,7 +24,7 @@ export default function FormStepThree({ stepOneComplete, stepTwoComplete, stepTh
               ? styles.stepThreeSection
               : styles.hidden
           }>
-            <div>Listing preview</div>
+            <JobPreviewContainer />
 
 
       <div className={styles.buttonsContainer}>
