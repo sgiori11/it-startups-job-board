@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Button from './Button';
 import JobPreviewContainer from './JobPreviewContainer';
  
-export default function FormStepThree({ stepOneComplete, stepTwoComplete, stepThreeComplete, handleStepThree, handleStepThreeBack }) {
+export default function FormStepThree({ stepOneComplete, stepTwoComplete, stepThreeComplete, handleStepThree, handleStepThreeBack,
+ jobTitle, companyName, contractType, location, jobSummary, companyLogo }) {
 
     const handleNext = (e) => {
         e.preventDefault();
@@ -24,8 +25,15 @@ export default function FormStepThree({ stepOneComplete, stepTwoComplete, stepTh
               ? styles.stepThreeSection
               : styles.hidden
           }>
-            <JobPreviewContainer />
-
+      
+          <JobPreviewContainer 
+            jobTitle={jobTitle}
+            companyName={companyName}
+            contractType={contractType}
+            location={location}
+            jobSummary={jobSummary}
+            companyLogo={companyLogo}
+           />
 
       <div className={styles.buttonsContainer}>
         <Button className={styles.prevStepBtn} onClick={handleBack} text="Back" />

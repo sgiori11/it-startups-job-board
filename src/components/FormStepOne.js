@@ -1,43 +1,12 @@
 import styles from '../styles/Form.module.css';
+import { useState } from 'react';
 import Link from 'next/link';
 import Button from './Button';
 
 
-export default function FormStepOne({ handleStepOne, stepOneComplete }) {
+export default function FormStepOne({ handleStepOne, stepOneComplete, handleChange, jobTitle, companyName, contractType, location, jobSummary, companyLogo }) {
 
-  const [jobTitle, setJobTitle] = useState('');
-  const [companyName, setCompanyName] = useState('');
-  const [contractType, setContractType] = useState('');
-  const [location, setLocation] = useState('');
-  const [jobSummary, setJobSummary] = useState('');
-  const [companyLogo, setCompanyLogo] = useState('');
   const [fileDragged, setFileDragged] = useState(false);
-  
-
-  const handleChange = (e) => {
-    switch (e.target.name) {
-      case 'job-title':
-        setJobTitle(e.target.value);
-        break;
-      case 'company-name':
-        setCompanyName(e.target.value);
-        break;
-      case 'contract-type':
-        setContractType(e.target.value);
-        break;
-      case 'location':
-        setLocation(e.target.value);
-        break;
-      case 'job-summary':
-        setJobSummary(e.target.value);
-        break;
-      case 'company-logo':
-        setCompanyLogo(URL.createObjectURL(event.target.files[0]));
-        break;
-      default: 
-        return null
-    }
- };
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -55,6 +24,7 @@ export default function FormStepOne({ handleStepOne, stepOneComplete }) {
     e.preventDefault();
     handleStepOne();
   };
+
 
   return(
      <section className={
@@ -123,7 +93,7 @@ export default function FormStepOne({ handleStepOne, stepOneComplete }) {
            name="company-logo" 
            onChange={handleChange} 
            accept=".jpg, .png" 
-           onDragOver={handleDragOver} onDragLeave={handleDragLeave}
+           onDragOver={handleDragOver} onDragLeave={handleDragLeave} 
        />
       </div>
     </div>

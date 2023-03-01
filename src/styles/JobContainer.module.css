@@ -22,6 +22,9 @@
 }
 
 .sectionOne {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     flex: 1;
     height: 100%;
     margin: 0.5em 1.5em 0 1.5em;
@@ -56,6 +59,9 @@
 }
 
 .sectionTwo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-top: 0.5em;
     height: 100%;
 }
@@ -80,6 +86,7 @@
 
 .tag {
     margin-bottom: 0.3em;
+    text-align: left;
 }
 
 .tag:nth-of-type(1) {

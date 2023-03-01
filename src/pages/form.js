@@ -12,6 +12,39 @@ export default function Form() {
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
     const [step, setStep] = useState('Step 1: Create your listing preview');
 
+    const [jobTitle, setJobTitle] = useState('');
+    const [companyName, setCompanyName] = useState('');
+    const [contractType, setContractType] = useState('');
+    const [location, setLocation] = useState('');
+    const [jobSummary, setJobSummary] = useState('');
+    const [companyLogo, setCompanyLogo] = useState('');
+    
+  
+    const handleChange = (e) => {
+      switch (e.target.name) {
+        case 'job-title':
+          setJobTitle(e.target.value);
+          break;
+        case 'company-name':
+          setCompanyName(e.target.value);
+          break;
+        case 'contract-type':
+          setContractType(e.target.value);
+          break;
+        case 'location':
+          setLocation(e.target.value);
+          break;
+        case 'job-summary':
+          setJobSummary(e.target.value);
+          break;
+        case 'company-logo':
+          setCompanyLogo(URL.createObjectURL(e.target.files[0]));
+          break;
+        default: 
+          return null
+      }
+   };
+
     const handleStepOne = () => {
         setStepOneComplete(true);
         setStep('Step 2: Add details about the role');
@@ -78,6 +111,14 @@ export default function Form() {
             </div>
             <form>
               <FormStepOne 
+                  handleChange={handleChange}
+                  jobTitle={jobTitle}
+                  companyName={companyName}
+                  contractType={contractType}
+                  location={location}
+                  jobSummary={jobSummary}
+                  companyLogo={companyLogo}
+
                   handleStepOne={handleStepOne} 
                   stepOneComplete={stepOneComplete} />
               <FormStepTwo 
@@ -87,6 +128,13 @@ export default function Form() {
                   stepTwoComplete={stepTwoComplete}
                    />
               <FormStepThree 
+                  jobTitle={jobTitle}
+                  companyName={companyName}
+                  contractType={contractType}
+                  location={location}
+                  jobSummary={jobSummary}
+                  companyLogo={companyLogo}
+
                   handleStepThree={handleStepThree}
                   handleStepThreeBack={handleStepThreeBack}
                   stepOneComplete={stepOneComplete}
