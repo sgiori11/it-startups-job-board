@@ -6,15 +6,15 @@ import noImg from '../../public/images/empty.png'
 const JobPreviewContainer = ({ jobTitle, companyName, contractType, location, jobSummary, companyLogo }) => {
     
     return (
-        <div className={styles.container}>
-            <Image
-                className={styles.companyLogo}
+        <div className={styles.previewContainer}>
+            <div className={styles.logoContainer} 
+            style={{ position: 'relative', width: '150px', height: '150px'}}>
+                <Image fill
                 src={companyLogo ? companyLogo : noImg}
-                width={130}
-                height={130}
+                style={{ objectFit: 'cover'}}
                 alt="logo"
-            />
-        
+                />
+             </div>
             <div className={styles.sectionOne}>
                 <h3 className={styles.jobTitle}>{jobTitle ? jobTitle : 'Job Title'}</h3>
                 <div className={styles.dateInfoCont}>

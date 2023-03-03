@@ -9,12 +9,14 @@ export default function NavBar() {
   
     return(
         <nav className={styles.nav}>
-          <Image 
+          <Link href="/">
+            <Image 
             priority 
             className={styles.logo}
             src={logo}
             alt="logo"
-           />
+            />
+          </Link>
            <Link
            className={styles.navLink + ' ' + utilStyles.headingL}
            href="/pages/about">About</Link>

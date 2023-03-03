@@ -17,6 +17,18 @@
     cursor: pointer;
 }
 
+.previewContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #D4C9FF;
+    min-height: 180px;
+    background-color: white;
+    margin: 0.5em 0em 3em 0;
+    padding: 1em;
+    width: 100%;
+}
+
 .companyLogo {
     height: 100%;
 }
@@ -111,7 +123,7 @@
         box-shadow: none;
     }
 
-    .container {
+    .container, .previewContainer {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -123,7 +135,7 @@
         max-width: 400px;
     }
 
-    .companyLogo {
+    .logoContainer {
         display: none;
     }
 

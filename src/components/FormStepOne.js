@@ -91,7 +91,10 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
            type="file" 
            id="logo" 
            name="company-logo" 
-           onChange={handleChange} 
+           onChange={(event) => {
+            handleChange(event);
+            handleDragOver(event);
+          }} 
            accept=".jpg, .png" 
            onDragOver={handleDragOver} onDragLeave={handleDragLeave} 
        />

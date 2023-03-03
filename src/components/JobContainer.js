@@ -6,12 +6,13 @@ const JobContainer = ({ job }) => {
     
     return (
         <div className={styles.container}>
-            <Image
-                className={styles.companyLogo}
+            <div className={styles.logoContainer} 
+                style={{ position: 'relative', width: '150px', height: '150px'}}>
+                <Image fill
                 src={testImg}
-                width={130}
-                alt={job.company + ' logo'}
-            />
+                alt="logo"
+                />
+             </div>
         
             <div className={styles.sectionOne}>
                 <h3 className={styles.jobTitle}>{job.position}</h3>
