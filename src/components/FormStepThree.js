@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Button from './Button';
 import JobPreviewContainer from './JobPreviewContainer';
  
-export default function FormStepThree({ stepOneComplete, stepTwoComplete, stepThreeComplete, handleStepThree, handleStepThreeBack,
- jobTitle, companyName, contractType, location, jobSummary, companyLogo }) {
+export default function FormStepThree({ stepTwoComplete, stepThreeComplete, handleStepThree, handleStepThreeBack,
+ jobTitle, companyName, contractType, location, jobSummary, companyLogo, tags }) {
 
     const handleNext = (e) => {
         e.preventDefault();
@@ -33,6 +33,7 @@ export default function FormStepThree({ stepOneComplete, stepTwoComplete, stepTh
             location={location}
             jobSummary={jobSummary}
             companyLogo={companyLogo}
+            tags={tags}
            />
 
       <div className={styles.buttonsContainer}>

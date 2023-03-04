@@ -11,14 +11,18 @@ export default function Form() {
     const [stepTwoComplete, setStepTwoComplete] = useState(false);
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
     const [step, setStep] = useState('Step 1: Create your listing preview');
-
     const [jobTitle, setJobTitle] = useState('');
     const [companyName, setCompanyName] = useState('');
     const [contractType, setContractType] = useState('');
     const [location, setLocation] = useState('');
     const [jobSummary, setJobSummary] = useState('');
     const [companyLogo, setCompanyLogo] = useState('');
-    
+    const [tags, setTags] = useState({
+      tag1: "",
+      tag2: "",
+      tag3: "",
+    });
+  
   
     const handleChange = (e) => {
       switch (e.target.name) {
@@ -71,6 +75,17 @@ export default function Form() {
       setStepTwoComplete(false);
       setStep('Step 2: Add details about the role');
     }
+
+    const handleTagChange = (e) => {
+      const { name, value } = e.target;
+      setTags((prevTags) => ({
+        ...prevTags,
+        [name]: value,
+      }));
+    };
+
+  
+  
     
     return(
     <div className={styles.formBody}>
@@ -120,7 +135,6 @@ export default function Form() {
                   location={location}
                   jobSummary={jobSummary}
                   companyLogo={companyLogo}
-
                   handleStepOne={handleStepOne} 
                   stepOneComplete={stepOneComplete} />
               <FormStepTwo 
@@ -128,6 +142,8 @@ export default function Form() {
                   handleStepTwoBack={handleStepTwoBack}
                   stepOneComplete={stepOneComplete}
                   stepTwoComplete={stepTwoComplete}
+                  handleTagChange={handleTagChange}
+                  tags={tags}
                    />
               <FormStepThree 
                   jobTitle={jobTitle}
@@ -136,7 +152,7 @@ export default function Form() {
                   location={location}
                   jobSummary={jobSummary}
                   companyLogo={companyLogo}
-
+                  tags={tags}
                   handleStepThree={handleStepThree}
                   handleStepThreeBack={handleStepThreeBack}
                   stepOneComplete={stepOneComplete}

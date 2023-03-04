@@ -42,7 +42,8 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
             name="job-title"
             onChange={handleChange} 
             value={jobTitle}
-            placeholder='Name of position'/>
+            placeholder='Name of position'
+            required />
         </span>
         <span className={styles.span}>
           <label className={styles.label} htmlFor="company-name">Company name:</label>
@@ -51,7 +52,8 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
             name="company-name" 
             onChange={handleChange} 
             value={companyName}
-            placeholder='Name of startup'/>
+            placeholder='Name of startup'
+            required />
         </span>
        </div>
        <div className={styles.spanContainer}>
@@ -63,7 +65,8 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
             name="contract-type"
             onChange={handleChange} 
             value={contractType}
-            placeholder='ex. "full-time"' />
+            placeholder='ex. "full-time"' 
+            required />
         </span>
         <span className={styles.span}>
           <label className={styles.label} htmlFor="location">Location:</label>
@@ -73,7 +76,8 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
             name="location"
             onChange={handleChange} 
             value={location}
-            placeholder='ex. "Remote"' />
+            placeholder='ex. "Remote"' 
+            required />
         </span>
       </div>
       <div>
@@ -83,7 +87,9 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
             name="job-summary" 
             onChange={handleChange} 
             value={jobSummary}
-            placeholder='Summarize the opportunity in 340 characters or less.'></textarea>
+            placeholder='Summarize the opportunity in 100 characters or less.'
+            required
+            maxLength={100}></textarea>
       </div>
       <div className={styles.logoContainer}>
         <label className={styles.label} htmlFor="logo">Company logo:</label>
@@ -97,6 +103,7 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
           }} 
            accept=".jpg, .png" 
            onDragOver={handleDragOver} onDragLeave={handleDragLeave} 
+           required
        />
       </div>
     </div>

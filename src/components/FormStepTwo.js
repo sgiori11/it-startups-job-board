@@ -3,7 +3,7 @@ import styles from '../styles/Form.module.css';
 import Link from 'next/link';
 import Button from './Button';
 
-export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete}) {
+export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, handleTagChange}) {
 
     const handleNext = (e) => {
         e.preventDefault();
@@ -24,6 +24,42 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
           : styles.hidden
       }>
        <div className={styles.stepTwoContainer}>
+        <p className={styles.label}>
+            Enter up to three tags (optional):
+        </p>
+        <div className={styles.tagContainer}>
+         <div className={styles.tagWrap}>
+            <label className={styles.label} htmlFor="tag2">#</label>
+            <input className={styles.input} 
+                placeholder="FemaleFounder"
+                type="text"
+                name="tag1"
+                value={tags.tag1}
+                onChange={handleTagChange}
+            />
+         </div>
+         <div className={styles.tagWrap}>
+            <label className={styles.label} htmlFor="tag2">#</label>
+            <input className={styles.input}
+                placeholder="GreenJob"
+                type="text"
+                name="tag2"
+                value={tags.tag2}
+                onChange={handleTagChange}
+
+             />
+         </div>
+         <div className={styles.tagWrap}>
+             <label className={styles.label} htmlFor="tag3">#</label>
+            <input className={styles.input}
+                placeholder="RemoteOK"
+                type="text"
+                name="tag3"
+                value={tags.tag3}
+                onChange={handleTagChange}
+            />
+         </div>
+        </div>
          <label className={styles.label} htmlFor="job-desc">Job description:</label>
          <textarea className={styles.jobDescription} 
             id="job-desc" 

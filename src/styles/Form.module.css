@@ -256,6 +256,68 @@
     position: absolute;
   }
 
+.input[type="text"]:valid, .textArea:valid {
+    position: relative;
+    outline: 1px solid #0500D6;
+    border: none;
+}
+
+/*.input[type="text"]:valid::after {
+    border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    content: '';
+    position: absolute;
+    background: url(/images/checkmark.svg) 
+    no-repeat center;
+    background-size: contain;
+}
+*/
+
+.tagContainer {
+    display: flex;
+    margin-bottom: 1.2em;
+}
+
+.tagWrap {
+    display: flex;
+    align-items: center;
+}
+
+.tagWrap label {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+}
+
+.tagWrap:nth-of-type(1) label {
+    color: #2760B6;
+}
+
+.tagWrap:nth-of-type(2) label {
+    color: #0D8119;
+}
+
+.tagWrap:nth-of-type(3) label {
+    color: #A01569;
+}
+
+.tagWrap input, .tagWrap input[type="text"]:focus {
+    border: none;
+    outline: none;
+    border-radius: none;
+}
+
+.tagWrap input[type="text"]:focus {
+    border-bottom: 1px solid #0500D6;
+}
+
+.tagWrap input[type="text"]:valid {
+    outline: none;
+}
+
   .stepOneSection {
     display: flex;
     flex-direction: column;
