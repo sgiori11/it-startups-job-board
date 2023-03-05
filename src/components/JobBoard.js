@@ -4,17 +4,17 @@ import utilStyles from '../styles/utils.module.css';
 import data from '../assets/data.json';
 import JobContainer from '@/components/JobContainer'
 
-const JobBoard = () => {
-    const [jobs, setJobs] = useState([]);
+const JobBoard = ({ jobs }) => {
+   // const [jobs, setJobs] = useState([]);
 
-    useEffect(() => {
+   // useEffect(() => {
       //fetch.('api url')
        // .then((res) => res.json())
         //.then((data) => {
             //setJobs(data);
         //});
-        setJobs(data); 
-    }, []);
+     //   setJobs(data); 
+   // }, []);
     
     
 

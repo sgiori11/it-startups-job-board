@@ -256,7 +256,7 @@
     position: absolute;
   }
 
-.input[type="text"]:valid, .textArea:valid {
+.input[type="text"]:valid, .textArea:valid, .jobDescription:valid {
     position: relative;
     outline: 1px solid #0500D6;
     border: none;

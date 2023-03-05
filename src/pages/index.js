@@ -1,10 +1,12 @@
+import { supabase } from '../lib/supabaseClient';
 import HeroSection from '@/components/HeroSection'
 import Head from 'next/head'
 import Layout from '@/components/layout';
 import JobBoard from '@/components/JobBoard';
 
 
-export default function Home() {
+export default function Home({ jobs }) {
+ 
   return (
     <Layout>
       <Head>
@@ -14,6 +16,17 @@ export default function Home() {
         <link rel="icon" href="" />
       </Head>
       <HeroSection />
-      <JobBoard />
+      <JobBoard jobs={jobs} />
    </Layout>
   )};
+
+export async function getServerSideProps() {
+  let { data } = await supabase.from('jobs').select()
+   
+  return {
+    props: {
+      jobs: data
+    },
+  }
+ };
+
