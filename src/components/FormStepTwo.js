@@ -3,13 +3,24 @@ import styles from '../styles/Form.module.css';
 import Link from 'next/link';
 import Button from './Button';
 
-export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, handleTagChange}) {
+export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, jobDescription, handleTagChange, handleChange}) {
 
     const handleNext = (e) => {
         e.preventDefault();
-        handleStepTwo();
-      };
 
+          // Get all required input fields
+      const requiredField = document.querySelector('textarea[data-step="step-two"][aria-required="true"]');
+       
+      if (!requiredField.value) {
+        requiredField.style.borderColor = 'red';
+        console.log("field is not filled")
+      } else {
+        requiredField.style.borderColor = '';
+        handleStepTwo();
+        console.log("field is filled")
+      }
+    };
+    
       const handleBack = (e) => {
         e.preventDefault();
         handleStepTwoBack();
@@ -63,12 +74,16 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
             />
          </div>
         </div>
-         <label className={styles.label} htmlFor="job-desc">Job description:</label>
+         <label className={styles.label} htmlFor="job-desc">Job description *</label>
          <textarea className={styles.jobDescription} 
             id="job-desc" 
             name="job-desc" 
             placeholder='Provide a detailed description of the role or opportunity.'
-            required></textarea>
+            aria-required="true"
+            data-step="step-two"
+            required
+            onChange={handleChange} 
+            value={jobDescription}></textarea>
        </div>
        <div className={styles.buttonsContainer}>
         <Button className={styles.prevStepBtn} onClick={handleBack} text="Back" />

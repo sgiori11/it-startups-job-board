@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/Form.module.css';
 import utilStyles from '../styles/utils.module.css';
 import FormStepOne from '@/components/FormStepOne';
@@ -11,6 +12,7 @@ export default function Form() {
     const [stepTwoComplete, setStepTwoComplete] = useState(false);
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
     const [step, setStep] = useState('Step 1: Create your listing preview');
+
     const [jobTitle, setJobTitle] = useState('');
     const [companyName, setCompanyName] = useState('');
     const [contractType, setContractType] = useState('');
@@ -20,10 +22,52 @@ export default function Form() {
     const [tags, setTags] = useState({
       tag1: "",
       tag2: "",
-      tag3: "",
+      tag3: ""
     });
+    const [jobDescription, setJobDescription] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+   
   
+
+    const handleSubmit = async (event) => {
+      event.preventDefault();
+      console.log("form submitted");
+      try {
+        const { data, error } = await supabase.from('jobs').insert({
+          job_title: jobTitle,
+          company_name: companyName,
+          contract_type: contractType,
+          location: location,
+          summary: jobSummary,
+          tag_one: tags.tag1,
+          tag_two: tags.tag2,
+          tag_three: tags.tag3,
+          job_desc: jobDescription,
+        });
+
+        if (error) {
+          throw error;
+        } else {
+          setSuccessMessage('Your job listing has been submitted successfully!');
+          setJobTitle('');
+          setCompanyName('');
+          setContractType('');
+          setLocation('');
+          setJobSummary('');
+          setTags({ tag1: '', tag2: '', tag3: ''});
+          setJobDescription('');
+
+        }
+      } catch (error) {
+        setErrorMessage('There was an error submitting your job listing.');
+        console.log(error);
+      }
+    };
   
+
+
+
     const handleChange = (e) => {
       switch (e.target.name) {
         case 'job-title':
@@ -40,6 +84,9 @@ export default function Form() {
           break;
         case 'job-summary':
           setJobSummary(e.target.value);
+          break;
+        case 'job-desc': 
+          setJobDescription(e.target.value);
           break;
         case 'company-logo':
           setCompanyLogo(URL.createObjectURL(e.target.files[0]));
@@ -84,7 +131,8 @@ export default function Form() {
       }));
     };
 
-  
+
+   
   
     
     return(
@@ -126,7 +174,9 @@ export default function Form() {
                           : styles.progressBarThree
                 }></div>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
+              {successMessage && <p>{successMessage}</p>}
+              {errorMessage && <p>{errorMessage}</p>}
               <FormStepOne 
                   handleChange={handleChange}
                   jobTitle={jobTitle}
@@ -138,12 +188,14 @@ export default function Form() {
                   handleStepOne={handleStepOne} 
                   stepOneComplete={stepOneComplete} />
               <FormStepTwo 
+                  handleChange={handleChange}
                   handleStepTwo={handleStepTwo} 
                   handleStepTwoBack={handleStepTwoBack}
                   stepOneComplete={stepOneComplete}
                   stepTwoComplete={stepTwoComplete}
                   handleTagChange={handleTagChange}
                   tags={tags}
+                  jobDescription={jobDescription}
                    />
               <FormStepThree 
                   jobTitle={jobTitle}

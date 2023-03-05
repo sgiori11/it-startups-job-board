@@ -262,19 +262,6 @@
     border: none;
 }
 
-/*.input[type="text"]:valid::after {
-    border: 2px solid blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    content: '';
-    position: absolute;
-    background: url(/images/checkmark.svg) 
-    no-repeat center;
-    background-size: contain;
-}
-*/
 
 .tagContainer {
     display: flex;

@@ -1,7 +1,7 @@
 import { supabase } from '../lib/supabaseClient';
 import HeroSection from '@/components/HeroSection'
 import Head from 'next/head'
-import Layout from '@/components/layout';
+import Layout from '@/components/Layout';
 import JobBoard from '@/components/JobBoard';
 
 

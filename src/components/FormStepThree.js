@@ -38,7 +38,7 @@ export default function FormStepThree({ stepTwoComplete, stepThreeComplete, hand
 
       <div className={styles.buttonsContainer}>
         <Button className={styles.prevStepBtn} onClick={handleBack} text="Back" />
-        <Button className={styles.nextStepBtn} onClick={handleNext} text="Publish job" />
+        <button className={styles.nextStepBtn}  type="submit">Publish Job</button>
       </div>
     </section>
     )
