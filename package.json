@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@supabase/auth-ui-react": "^0.3.3",
+    "@supabase/auth-ui-shared": "^0.1.2",
     "@supabase/supabase-js": "^2.10.0",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",

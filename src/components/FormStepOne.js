@@ -17,6 +17,27 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
   const [fileDragged, setFileDragged] = useState(false);
   const [error, setError] = useState('');
 
+
+  const validFileType = (e) => {
+    const selectedFile = e.target.files[0];
+
+    if (!selectedFile) {
+      setError("No file selected");
+      setFileDragged(false);
+    } else if (!fileTypes.includes(selectedFile.type)) {
+      setError("Incorrect file type. Select a png, jpeg, or svg image.");
+      setFileDragged(false);
+    } else if (selectedFile.size > maxFileSize) {
+      setError("File too large. Select a file under 1MB.");
+      setFileDragged(false);
+    }
+     else {
+      setError('');
+      handleDragOver(e);
+      handleChange(e);
+    }
+  };
+
   const handleDragOver = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -29,26 +50,6 @@ export default function FormStepOne({ handleStepOne, stepOneComplete, handleChan
     setFileDragged(false);
   };
 
- 
-  const validFileType = (e) => {
-    const selectedFile = e.target.files[0];
-
-    if (!selectedFile) {
-      setError("No file selected");
-      setFileDragged(false);
-    } else if (!fileTypes.includes(selectedFile.type)) {
-      setError("Incorrect file type. Select a png or jpeg image.");
-      setFileDragged(false);
-    } else if (selectedFile.size > maxFileSize) {
-      setError("File too large. Select a file under 1MB.");
-      setFileDragged(false);
-    }
-     else {
-      setError('');
-      handleDragOver(e);
-      handleChange(e);
-    }
-  };
   
   const onClick = (e) => {
     e.preventDefault();
