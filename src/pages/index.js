@@ -3,6 +3,7 @@ import HeroSection from '@/components/HeroSection'
 import Head from 'next/head'
 import Layout from '@/components/Layout';
 import JobBoard from '@/components/JobBoard';
+import Auth from '@/components/AuthUI';
 
 
 export default function Home({ jobs }) {
@@ -16,6 +17,7 @@ export default function Home({ jobs }) {
         <link rel="icon" href="" />
       </Head>
       <HeroSection />
+      <Auth />
       <JobBoard jobs={jobs} />
    </Layout>
   )};

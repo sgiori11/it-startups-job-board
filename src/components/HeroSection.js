@@ -5,6 +5,7 @@ import SecondaryButton from './SecondaryButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import purpleBg from '../../public/images/purplebg.svg'
+import Auth from './AuthUI';
 
 
 const HeroSection = () => {
@@ -12,7 +13,7 @@ const HeroSection = () => {
         <Link href='./Form' />;
     };
 
-    const handleSecondaryBtnClick = () => {
+    const handlePostJob = () => {
         alert("Clicked secondary");
     };
 
@@ -24,7 +25,7 @@ const HeroSection = () => {
             with <span style={{fontWeight: 'bold'}}>IT</span> startups & founders
         </h1>
         <div className={styles.btnsContainer}>
-          <PrimaryButton text="Find a Job" onClick={handlePrimaryBtnClick} />
+          <PrimaryButton text="Find a Job" onClick={handlePostJob} />
           <SecondaryButton text="Post a Job" />
         </div>
        </div>

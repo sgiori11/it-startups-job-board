@@ -1,11 +1,18 @@
-import { supabase } from '../lib/supabaseClient';
-import { Auth } from '@supabase/auth-ui-react';
+import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs'
+import { SessionContextProvider } from '@supabase/auth-helpers-react'
+import { useState } from 'react'
 import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }) {
+// Create a new supabase browser client on every first render.
+  const [supabaseClient] = useState(() => createBrowserSupabaseClient())
+
   return (
-    <div>
-       <Component {...pageProps} />
-       <Auth supabaseClient={supabase} appearance={{ theme: 'light' }} />
-    </div>
-)};
+    <SessionContextProvider
+    supabaseClient={supabaseClient}
+    initialSession={pageProps.initialSession}
+    >
+      <Component {...pageProps} />
+    </SessionContextProvider>
+  )
+};
