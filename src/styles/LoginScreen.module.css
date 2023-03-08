@@ -1,0 +1,80 @@
+.loginOverlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.818);
+    z-index: 100;
+}
+
+.loginContainer {
+    background-color: white;
+    min-width: 300px;
+    padding: 2em;
+    max-width: 450px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.08);
+}
+
+.loginContainer p {
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: 600;
+}
+
+.button {
+    padding: 1em !important;
+    border-radius: 2px !important;
+    background-color: #FC62FF;
+    border: 1px solid black !important;
+    color: white;
+    font-weight: 600 !important;
+    margin-top: 0.5em;
+}
+
+.button:hover {
+    background-color: #FC62FF !important;
+    color: white !important;
+    border-color: #FC62FF !important;
+    transition: 0.2s all ease;
+}
+
+.label {
+    margin-bottom: 8px !important;
+    font-size: 0.9em !important;
+}
+
+.input {
+    background-color: white;
+    width: 100%;
+    min-width: 200px;
+    min-height: 50px;
+    border: 1px solid #d3d3d3 !important;
+    box-shadow: inset 0px 1px 18px -4px rgba(0, 0, 0, 0.031);
+    border-radius: 2px !important;
+    padding-left: 10px !important;
+}
+
+.input::placeholder {
+    font-size: 0.9em;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: #ACACAC;
+}
+
+
+
+/*
+"button", "container", "anchor", 
+"divider", "label", "input", "loader",
+ "message".
+
+*/
