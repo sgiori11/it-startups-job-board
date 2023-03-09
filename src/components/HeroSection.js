@@ -5,16 +5,26 @@ import SecondaryButton from './SecondaryButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import purpleBg from '../../public/images/purplebg.svg'
-import Auth from './AuthUI';
-
+import { useUser } from '@supabase/auth-helpers-react'
+import { useState } from 'react'
+import LoginScreen from './LoginScreen';
 
 const HeroSection = () => {
+
+  const [showModal, setShowModal] = useState();
+  const user = useUser();
+
     const handlePrimaryBtnClick = () => {
         <Link href='./Form' />;
     };
 
     const handlePostJob = () => {
-        alert("Clicked secondary");
+        if (!user) {
+          setShowModal(true);
+          } else {
+          setShowModal(false);
+          <Link href='./Form' />;
+        }
     };
 
     return (
@@ -25,8 +35,8 @@ const HeroSection = () => {
             with <span style={{fontWeight: 'bold'}}>IT</span> startups & founders
         </h1>
         <div className={styles.btnsContainer}>
-          <PrimaryButton text="Find a Job" onClick={handlePostJob} />
-          <SecondaryButton text="Post a Job" />
+          <PrimaryButton text="Post a Job" onClick={handlePostJob} />
+          <SecondaryButton text="Find a Job" />
         </div>
        </div>
         
@@ -61,6 +71,9 @@ const HeroSection = () => {
           src={purpleBg}
           className={styles.uspsBg}
         />
+        {showModal && (
+          <LoginScreen showModal={showModal} setShowModal={setShowModal} />
+        )}
       </section>
     );
   };

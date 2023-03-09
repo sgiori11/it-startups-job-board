@@ -1,14 +1,17 @@
 import { Auth } from '@supabase/auth-ui-react'
-import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { supabase } from '../lib/supabaseClient';
-import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useUser } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 import styles from '../styles/LoginScreen.module.css'
 
-const LoginPage = () => {
+const LoginPage = ({ showModal, setShowModal }) => {
   const supabaseClient = supabase
   const user = useUser()
   const [data, setData] = useState()
+
+  function closeModal() {
+    setShowModal(false)
+  };
 
   //useEffect(() => {
     //async function loadData() {
@@ -21,8 +24,17 @@ const LoginPage = () => {
 
   if (!user)
     return (
-    <div className={styles.loginOverlay}>
+    <div className={showModal ? styles.loginOverlay : styles.closeModal}>
       <div className={styles.loginContainer}>
+        <button className={styles.dismissButton}
+                onClick={closeModal}
+        >
+          <svg width="23" height="25" viewBox="0 0 29 31" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <rect width="31" height="31" fill="white"/>
+          <line x1="2.74125" y1="4" x2="26" y2="27.2587" stroke="black" stroke-width="3.87671" stroke-linecap="round"/>
+          <line x1="2.32593" y1="27.2588" x2="25.5847" y2="4" stroke="black" stroke-width="3.87671" stroke-linecap="round"/>
+          </svg>
+        </button>
         <p>Log in to post a job on Startup Finder!</p>
         <Auth
         redirectTo="http://localhost:3000/"
@@ -53,13 +65,7 @@ const LoginPage = () => {
     )
 
   return (
-    <>
-      <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
-      <p>user:</p>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-      <p>client-side data fetching with RLS</p>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </>
+    <p>congrats, you're logged in!</p>
   )
 }
 
