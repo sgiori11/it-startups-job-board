@@ -7,7 +7,7 @@ import Auth from '@/components/LoginScreen';
 
 
 export default function Home({ jobs }) {
- 
+  console.log(jobs);
   return (
     <Layout>
       <Head>
@@ -23,7 +23,8 @@ export default function Home({ jobs }) {
   )};
 
 export async function getServerSideProps() {
-  let { data } = await supabase.from('jobs').select()
+  let { data } = await supabase.from('jobs').select();
+  
    
   return {
     props: {

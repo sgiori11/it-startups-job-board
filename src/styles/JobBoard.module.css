@@ -44,12 +44,26 @@
 
 }
 
+.searchBar[type="search"]::-webkit-search-cancel-button {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: url(/images/dismiss.svg) no-repeat center center;
+    padding-right: 20px;
+    cursor: pointer;
+  }
+
 .searchBar::placeholder {
     color: black;
     font-size: 1.2em;
     background: url(/images/search.svg)
         no-repeat 38%;
 }   
+
+.searchBar:focus::placeholder {
+    color: transparent;
+    background: none;
+}
 
 
 @media only screen and (max-width: 875px) {

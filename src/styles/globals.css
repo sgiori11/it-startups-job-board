@@ -30,4 +30,10 @@
         vertical-align: baseline;
   }
 
+  a {
+        color: black;
+        text-decoration: none;
+        width: inherit;
+      }
+
  

@@ -7,12 +7,15 @@
     background-color: white;
     margin: 0.5em 0;
     padding: 1em;
-    width: 100%;
+    min-width: 100%;
+    border: 1px solid #EFEFEF;
+    -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
+    box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
 }
 
 .container:hover {
-    -webkit-box-shadow: 0px 0px 10px 11px #D6DAFF; 
-    box-shadow: 0px 0px 10px 5px #D6DAFF;
+    box-shadow: none;
+    transform: translateY(2px);
     transition: 0.2s ease;
     cursor: pointer;
 }
@@ -43,13 +46,13 @@
 }
 
 .jobTitle {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 0.5em;
     font-weight: 700;
 }
 
 .companyName {
-    font-size: 1.05em;
+    font-size: 1em;
     font-weight: 500;
 }
 
@@ -76,12 +79,13 @@
     align-items: flex-start;
     margin-top: 0.5em;
     height: 100%;
+    width: 150px;
 }
 
 .jobLoc {
     position: relative;
     font-size: 1.1em;
-    margin-bottom: 1em;
+    margin-bottom: 0.9em;
     padding-left: 1.5em;
 }
 
@@ -99,6 +103,7 @@
 .tag {
     margin-bottom: 0.3em;
     text-align: left;
+    font-size: 0.95em;
 }
 
 .tag:nth-of-type(1) {
@@ -119,6 +124,7 @@
 
   @media only screen and (max-width: 680px) {
     .container:hover {
+        transform: none;
         -webkit-box-shadow: none; 
         box-shadow: none;
     }
@@ -133,6 +139,8 @@
         margin: 0.5em 0;
         padding: 1em;
         max-width: 400px;
+        -webkit-box-shadow: none; 
+        box-shadow: none;
     }
 
     .logoContainer {

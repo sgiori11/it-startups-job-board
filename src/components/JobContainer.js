@@ -7,7 +7,7 @@ const JobContainer = ({ job }) => {
     return (
         <div className={styles.container}>
             <div className={styles.logoContainer} 
-                style={{ position: 'relative', width: '150px', height: '150px'}}>
+                style={{ position: 'relative', width: '120px', height: '120px'}}>
                 <Image fill
                 src={testImg}
                 alt="logo"
