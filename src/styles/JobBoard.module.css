@@ -40,6 +40,7 @@
     width: 100vw;
     max-width: 1000px;
     border: 1px solid #cfd4f2a9;
+    border-radius: 2px;
     background: linear-gradient(40deg, #cfd4f2a9 24%, rgba(0, 0, 0, 0) 100%);
 
 }

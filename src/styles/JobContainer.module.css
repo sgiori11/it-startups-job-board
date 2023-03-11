@@ -1,8 +1,8 @@
 .container {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #D4C9FF;
     min-height: 180px;
     background-color: white;
     margin: 0.5em 0;
@@ -11,6 +11,7 @@
     border: 1px solid #EFEFEF;
     -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
     box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
+    border-radius: 2px;
 }
 
 .container:hover {
@@ -49,7 +50,7 @@
 .jobTitle {
     font-size: 1.1em;
     margin-bottom: 0.5em;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .companyName {
@@ -88,10 +89,10 @@
 
 .jobLoc {
     position: relative;
-    font-size: 1.1em;
+    font-size: 1em;
     margin-bottom: 0.9em;
-    padding-left: 1.5em;
-    font-weight: 600;
+    padding-left: 1.4em;
+    font-weight: 500;
 }
 
 .jobLoc::before {
@@ -99,10 +100,10 @@
     background: url(/images/location.svg)
       no-repeat center;
     position: absolute;
-    top: 3px;
+    top: 0px;
     left: 0;
-    width: 1.2em;
-    height: 1.2em;
+    width: 1em;
+    height: 1.3em;
 }
 
 .tag {
@@ -148,10 +149,19 @@
         -webkit-box-shadow: none; 
         box-shadow: none;
         border-radius: 2px;
+        min-height: 0px;
     }
 
     .logoContainer {
         display: none;
+    }
+
+    .jobTitle {
+        font-size: 1.1em;
+    }
+
+    .companyName {
+        font-size: 0.95em;
     }
 
     .jobDesc {
@@ -168,12 +178,14 @@
     }
 
     .jobLoc {
-        position: relative;
-        font-size: 1em;
+        position: absolute;
+        top: 0;
+        right: 1em;
+        font-size: 0.95em;
         margin-bottom: 0.8em;
         margin-top: 1em;
         padding-left: 0em;
-        background-color: #e6e6f9;
+        background-color: #ebebfc;
         color: #3900B1;
         font-weight: 300;
         padding: 0.2em 0.4em;
@@ -188,6 +200,7 @@
     .tag {
         margin: 0 0.5em;
         margin-bottom: 0.3em;
+        font-size: 0.85em;
     }
 
     .tags {
@@ -195,6 +208,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
+        margin-top: 0.5em;
     }
 
   }
