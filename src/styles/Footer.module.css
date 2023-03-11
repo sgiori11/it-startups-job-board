@@ -1,0 +1,7 @@
+.container {
+    width: 100vw;
+    min-height: 400px;
+    background: url(/images/Milan.svg)
+        no-repeat top;
+        background-size: cover;
+}

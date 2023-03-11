@@ -1,6 +1,17 @@
+.nav a {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    margin-left: 2em;
+
+}
+
 .nav {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     background-color: white;
     z-index: 1000 !important;
     position: sticky;
@@ -13,16 +24,28 @@
 .logo {
    width: 180px;
    height: auto;
-   margin-left: 2em;
-}
-
-.navLink {
-    text-decoration: none;
-    color: black;
-    margin: 0 1em;
 }
 
 .navLink:hover {
     color: var(--bgDark);
     transition: 0.1s ease;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .nav a {
+        font-size: 1em;
+    }
+
+    .nav a:first-of-type {
+        margin-left: 0.5em;
+    }
+
+    .navLink:hover {
+        color: black;
+    }
+
+    .logo {
+        width: 120px;
+    }
 }

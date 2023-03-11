@@ -16,8 +16,9 @@
 .container:hover {
     box-shadow: none;
     transform: translateY(2px);
-    transition: 0.2s ease;
+    transition: transform 0.2s ease;
     cursor: pointer;
+    outline: 1px solid #D7D6FF;
 }
 
 .previewContainer {
@@ -53,7 +54,8 @@
 
 .companyName {
     font-size: 1em;
-    font-weight: 500;
+    color: black;
+    font-weight: 400;
 }
 
 .dateInfoCont {
@@ -62,15 +64,17 @@
 }
 
 .postedOn {
-    color: #262222;
+    color: #9c9c9f;
     font-size: 0.8em;
     margin-left: 3em;
 }
 
 .jobDesc {
    margin-top: 1em;
-   font-size: 1em;
+   font-size: 0.9em;
    max-width: 500px;
+   font-weight: 300;
+   color: #59595c;
 }
 
 .sectionTwo {
@@ -87,6 +91,7 @@
     font-size: 1.1em;
     margin-bottom: 0.9em;
     padding-left: 1.5em;
+    font-weight: 600;
 }
 
 .jobLoc::before {
@@ -127,6 +132,7 @@
         transform: none;
         -webkit-box-shadow: none; 
         box-shadow: none;
+        outline: none;
     }
 
     .container, .previewContainer {
@@ -141,6 +147,7 @@
         max-width: 400px;
         -webkit-box-shadow: none; 
         box-shadow: none;
+        border-radius: 2px;
     }
 
     .logoContainer {
@@ -156,11 +163,26 @@
         margin: 0;
     }
 
+    .sectionTwo {
+        width: 100%;
+    }
+
     .jobLoc {
         position: relative;
-        font-size: 1.1em;
+        font-size: 1em;
         margin-bottom: 0.8em;
         margin-top: 1em;
+        padding-left: 0em;
+        background-color: #e6e6f9;
+        color: #3900B1;
+        font-weight: 300;
+        padding: 0.2em 0.4em;
+        border-radius: 2px;
+    }
+
+    .jobLoc::before {
+        content: " ";
+        background: none;
     }
 
     .tag {
