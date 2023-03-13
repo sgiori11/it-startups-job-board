@@ -52,6 +52,7 @@ export default function Form() {
           tag_two: tags.tag2,
           tag_three: tags.tag3,
           job_desc: jobDescription,
+          logo_url: filePath,
         }),
 
         supabase

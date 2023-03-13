@@ -1,15 +1,16 @@
 import styles from '../styles/JobContainer.module.css'
 import Image from 'next/image'
-import testImg from '../../public/images/logo.svg'
+//import testImg from '../../public/images/logo.svg'
 
 const JobContainer = ({ job }) => {
     
     return (
         <div className={styles.container}>
             <div className={styles.logoContainer} 
-                style={{ position: 'relative', width: '120px', height: '120px'}}>
+                style={{ position: 'relative', width: '150px', height: '150px'}}>
                 <Image fill
-                src={testImg}
+                style={{ objectFit: "cover", width: '100%', height: '100%'}}
+                src={`https://hewqsbwtsubfefrjhlol.supabase.co/storage/v1/object/public/logos/${job.logo_url}`}
                 alt="logo"
                 />
              </div>
