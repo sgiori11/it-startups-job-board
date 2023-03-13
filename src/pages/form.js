@@ -19,6 +19,10 @@ export default function Form() {
     const [location, setLocation] = useState('');
     const [jobSummary, setJobSummary] = useState('');
     const [companyLogo, setCompanyLogo] = useState('');
+    const [logoFile, setLogoFile] = useState('');
+    const fileExt = logoFile ? logoFile.name.split('.').pop() : '';
+    const fileName = `${Math.random()}.${fileExt}`
+    const filePath = `${fileName}`
     const [tags, setTags] = useState({
       tag1: "",
       tag2: "",
@@ -34,7 +38,11 @@ export default function Form() {
       event.preventDefault();
       console.log("form submitted");
       try {
-        const { data, error } = await supabase.from('jobs').insert({
+        const [jobInsertResult, logoUploadResult] = await Promise.all ([
+
+           supabase
+          .from('jobs')
+          .insert({
           job_title: jobTitle,
           company_name: companyName,
           contract_type: contractType,
@@ -44,10 +52,17 @@ export default function Form() {
           tag_two: tags.tag2,
           tag_three: tags.tag3,
           job_desc: jobDescription,
-        });
+        }),
 
-        if (error) {
-          throw error;
+        supabase
+        .storage
+        .from('logos')
+        .upload(filePath, logoFile, { upsert: true })
+
+      ]);
+
+        if (jobInsertResult.error || logoUploadResult.error) {
+          throw new Error('Error submitting job listing');
         } else {
           setSuccessMessage('Your job listing has been submitted successfully!');
           setJobTitle('');
@@ -90,6 +105,7 @@ export default function Form() {
           break;
         case 'company-logo':
           setCompanyLogo(URL.createObjectURL(e.target.files[0]));
+          setLogoFile(e.target.files[0]);
           break;
         default: 
           return null

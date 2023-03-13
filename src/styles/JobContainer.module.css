@@ -71,6 +71,7 @@
 }
 
 .jobDesc {
+   text-align: left;
    margin-top: 1em;
    font-size: 0.9em;
    max-width: 500px;
@@ -86,6 +87,8 @@
     height: 100%;
     width: 150px;
 }
+
+
 
 .jobLoc {
     position: relative;
