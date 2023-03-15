@@ -1,0 +1,155 @@
+.heroSection {
+    display: flex;
+    justify-content: space-between;
+    padding: 0em 5vw;
+}
+
+.logoContainer {
+    margin-right: 1.5em;
+}
+
+.sectionOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.jobTitle {
+    font-weight: 900;
+    font-size: 2.1em;
+    margin-top: 20px;
+    margin-bottom: 0.2em;
+}
+
+.dateInfoCont {
+    display: flex;
+    align-items: center;
+}
+
+.companyName {
+    font-size: 1.6em;
+    font-weight: 400;
+}
+
+.postedOn {
+    color: #7c7c81;
+    font-size: 0.9em;
+    margin-left: 5em;
+}
+
+.tags {
+    display: flex;
+    flex-direction: flex-end;
+}
+
+.sectionTwo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.tag {
+    margin-bottom: 0.3em;
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: 300;
+    margin-right: 1.5em;
+}
+
+.tag:nth-of-type(1) {
+    color: #CE2E7B;
+  }
+  
+  .tag:nth-of-type(2) {
+    color: #2760B6;
+  }
+  
+  .tag:nth-of-type(3) {
+    color: #0D8119;
+  }
+  
+  .tag:nth-of-type(4) {
+    color: #A01569;
+  }
+
+.applyCTA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00114D;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+    padding: 20px 40px;
+    background-color: #EBC1FF;
+}
+
+.jobSection {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin: 5em;
+    margin-right: 2em;
+    margin: 10em 5vw;
+}
+
+.jobText {
+    color: #333333;
+    line-height: 1.9;
+    font-size: 1em;
+    max-width: 650px;
+}
+
+.applyModule {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    background-color: #F4F6FA;
+    min-width: 350px;
+    margin-left: 2em;
+    align-self: flex-start;
+    border-radius: 3px;
+}
+
+.applyModule h3 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+}
+
+.applyModule a {
+    width: 100%;
+    
+} 
+
+.jobLoc {
+    position: relative;
+    font-size: 1.3em;
+    margin-bottom: 0.9em;
+    padding-left: 1.4em;
+    font-weight: 400;
+}
+
+.jobLoc::before {
+    content: " ";
+    background: url(/images/location.svg)
+      no-repeat center;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 1em;
+    height: 1.3em;
+}
+
+.moduleTags {
+    display: block;
+    margin: 1em 0;
+}
+
+.moduleTags p {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
