@@ -1,11 +1,15 @@
 .heroSection {
     display: flex;
     justify-content: space-between;
-    padding: 0em 5vw;
+    margin: 0em 10vw;
 }
 
 .logoContainer {
     margin-right: 1.5em;
+}
+
+.logoContainer img {
+    border-radius: 10px;
 }
 
 .sectionOne {
@@ -17,7 +21,7 @@
 
 .jobTitle {
     font-weight: 900;
-    font-size: 2.1em;
+    font-size: 2em;
     margin-top: 20px;
     margin-bottom: 0.2em;
 }
@@ -28,7 +32,7 @@
 }
 
 .companyName {
-    font-size: 1.6em;
+    font-size: 1.5em;
     font-weight: 400;
 }
 
@@ -41,6 +45,7 @@
 .tags {
     display: flex;
     flex-direction: flex-end;
+    flex-wrap: wrap;
 }
 
 .sectionTwo {
@@ -54,7 +59,7 @@
 .tag {
     margin-bottom: 0.3em;
     text-align: left;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 300;
     margin-right: 1.5em;
 }
@@ -87,13 +92,17 @@
     background-color: #EBC1FF;
 }
 
+.heroSection .applyCTA {
+    display: none;
+}
+
 .jobSection {
     display: flex;
     justify-content: space-between;
     background-color: white;
     margin: 5em;
     margin-right: 2em;
-    margin: 10em 5vw;
+    margin: 10em 10vw;
 }
 
 .jobText {
@@ -152,4 +161,89 @@
     font-size: 1em;
     font-weight: 400;
     margin-bottom: 8px;
+}
+
+@media only screen and (max-width: 1140px) {
+    .heroSection, .jobSection {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    .logoContainer {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .jobTitle {
+        font-weight: 900;
+        font-size: 1.8em;
+        margin-top: 20px;
+        margin-bottom: 0.5em;
+    }
+    
+    .dateInfoCont {
+        display: flex;
+        align-items: center;
+    }
+    
+    .companyName {
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+
+    .tags {
+        margin-top: 1.5em;
+    }
+
+    .heroSection {
+        position: relative;
+    }
+
+    .applyCTA {
+        position: sticky;
+        top: 0;
+        padding: 0.8em;
+        margin-top: 1.5em;
+        font-size: 1.3em;
+    }
+
+    .sectionTwo .applyCTA {
+        display: flex;
+    }
+
+    .sectionTwo {
+        width: 100%;
+    }
+
+    .heroSection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .applyModule {
+        display: none;
+    }
+
+    .jobDescCont {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .jobText {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .moduleTags {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0.5em;
+    }
+    
+
 }

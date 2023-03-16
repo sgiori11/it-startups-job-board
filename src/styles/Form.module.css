@@ -186,9 +186,18 @@
     padding-left: 10px;
   }
   
-.input[type="file"], .textArea, .jobDescription {
+.input[type="file"], .textArea {
     width: 100%;
     border: 1px solid #C7C7C7;
+  }
+
+  .quillEditor {
+    margin-bottom: 3em;
+    min-height: 400px;
+  }
+
+  .ql-container {
+    min-height: 400px !important;
   }
 
 .textArea, .jobDescription {
@@ -210,11 +219,6 @@
 .textArea:focus, .jobDescription:focus {
     outline: 2px solid #0500D6;
     box-shadow: none;
-}
-
-.jobDescription {
-    width: 100%;
-    height: 50vh;
 }
 
 .input[type="file"] {

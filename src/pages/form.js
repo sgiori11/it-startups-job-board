@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/Form.module.css';
 import utilStyles from '../styles/utils.module.css';
@@ -6,6 +6,7 @@ import FormStepOne from '@/components/FormStepOne';
 import FormStepTwo from '@/components/FormStepTwo';
 import FormStepThree from '@/components/FormStepThree';
 import Layout from '@/components/Layout';
+import ReactQuill from 'react-quill';
 
 export default function Form() {
     const [stepOneComplete, setStepOneComplete] = useState(false);
@@ -29,6 +30,7 @@ export default function Form() {
       tag3: ""
     });
     const [jobDescription, setJobDescription] = useState('');
+    const editorRef = useRef(null);
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
    
@@ -83,7 +85,6 @@ export default function Form() {
   
 
 
-
     const handleChange = (e) => {
       switch (e.target.name) {
         case 'job-title':
@@ -101,9 +102,9 @@ export default function Form() {
         case 'job-summary':
           setJobSummary(e.target.value);
           break;
-        case 'job-desc': 
-          setJobDescription(e.target.value);
-          break;
+       // case 'job-desc': 
+         // setJobDescription(e.target.value);
+         // break;
         case 'company-logo':
           setCompanyLogo(URL.createObjectURL(e.target.files[0]));
           setLogoFile(e.target.files[0]);
@@ -112,6 +113,13 @@ export default function Form() {
           return null
       }
    };
+
+   const handleQuillChange = () => {
+    if (editorRef.current) {
+      setJobDescription(editorRef.current.getEditor().root.innerHTML);
+    }
+  }
+  
 
     const handleStepOne = () => {
         setStepOneComplete(true);
@@ -213,6 +221,7 @@ export default function Form() {
                   handleTagChange={handleTagChange}
                   tags={tags}
                   jobDescription={jobDescription}
+                  handleQuillChange={handleQuillChange}
                    />
               <FormStepThree 
                   jobTitle={jobTitle}

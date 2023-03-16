@@ -2,8 +2,12 @@ import { useState } from 'react';
 import styles from '../styles/Form.module.css';
 import Link from 'next/link';
 import Button from './Button';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
-export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, jobDescription, handleTagChange, handleChange}) {
+
+
+export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, jobDescription, handleTagChange, handleQuillChange}) {
 
     const handleNext = (e) => {
         e.preventDefault();
@@ -26,6 +30,21 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
         handleStepTwoBack();
          
       };
+
+      const modules = {
+        toolbar: [
+          [{'header': '2'}],
+          ['bold', 'italic'],
+          [{'list': 'ordered'}, {'list': 'bullet'}]
+        ],
+        clipboard: {
+          // toggle to add extra line breaks when pasting HTML:
+          matchVisual: false,
+        }
+      };
+      
+      const formats = [  'header', 'bold', 'italic', 'list', 'bullet'];
+      
 
     return (
      <section className={
@@ -75,15 +94,19 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
          </div>
         </div>
          <label className={styles.label} htmlFor="job-desc">Job description *</label>
-         <textarea className={styles.jobDescription} 
+         <ReactQuill 
+            className={styles.quillEditor}
             id="job-desc" 
             name="job-desc" 
             placeholder='Provide a detailed description of the role or opportunity.'
             aria-required="true"
             data-step="step-two"
             required
-            onChange={handleChange} 
-            value={jobDescription}></textarea>
+            onChange={handleQuillChange}
+            value={jobDescription}
+            modules={modules}
+            formats={formats}
+          />
        </div>
        <div className={styles.buttonsContainer}>
         <Button className={styles.prevStepBtn} onClick={handleBack} text="Back" />
