@@ -1,3 +1,7 @@
+.pageContainer {
+   
+}
+
 .heroSection {
     display: flex;
     justify-content: space-between;
@@ -97,6 +101,8 @@
 }
 
 .jobSection {
+    position: relative;
+    min-height: 600px;
     display: flex;
     justify-content: space-between;
     background-color: white;
@@ -113,6 +119,9 @@
 }
 
 .applyModule {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 100px;
     display: flex;
     flex-direction: column;
     padding: 1.5em;
@@ -199,20 +208,18 @@
         margin-top: 1.5em;
     }
 
-    .heroSection {
-        position: relative;
-    }
-
-    .applyCTA {
-        position: sticky;
-        top: 0;
-        padding: 0.8em;
-        margin-top: 1.5em;
-        font-size: 1.3em;
-    }
-
     .sectionTwo .applyCTA {
-        display: flex;
+        padding: 0.8em;
+        margin: 0;
+        font-size: 1em;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100% !important;
+        display: block;
+        text-align: center;
+        z-index: 100;
     }
 
     .sectionTwo {
@@ -227,6 +234,10 @@
 
     .applyModule {
         display: none;
+    }
+
+    .jobSection {
+        margin-top: 5em;
     }
 
     .jobDescCont {

@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 export default function JobPost({ job }) {
   return (
+   <section className={styles.pageContainer}>
     <Layout>
         <section className={styles.heroSection}>
             <div className={styles.logoContainer} 
@@ -63,9 +64,8 @@ export default function JobPost({ job }) {
                 <a className={styles.applyCTA}>Apply to job</a>
             </div>
         </section>
-        
-
     </Layout>
+  </section>
 )}
 
 export async function getStaticPaths() {

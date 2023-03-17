@@ -13,13 +13,13 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
         e.preventDefault();
 
           // Get all required input fields
-      const requiredField = document.querySelector('textarea[data-step="step-two"][aria-required="true"]');
+      const isBlank = document.querySelector('.ql-blank');
        
-      if (!requiredField.value) {
-        requiredField.style.borderColor = 'red';
+      if (isBlank) {
+        isBlank.parentElement.style.borderColor = 'red';
         console.log("field is not filled")
       } else {
-        requiredField.style.borderColor = '';
+        document.querySelector('.ql-container').style.borderColor = '';
         handleStepTwo();
         console.log("field is filled")
       }

@@ -191,14 +191,27 @@
     border: 1px solid #C7C7C7;
   }
 
-  .quillEditor {
-    margin-bottom: 3em;
-    min-height: 400px;
+.ql-container {
+    height: auto;
+  
   }
 
-  .ql-container {
-    min-height: 400px !important;
+  div.ql-container.ql-snow {
+  
   }
+  
+.ql-editor {
+    height: 100% !important;
+    flex: 1;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+.quillEditor {
+    height: 500px;
+    overflow-y: scroll;
+    margin-bottom: 3em;
+}
 
 .textArea, .jobDescription {
     background-color: white;
