@@ -103,7 +103,6 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
             data-step="step-two"
             required
             onChange={handleQuillChange}
-            value={jobDescription}
             modules={modules}
             formats={formats}
           />

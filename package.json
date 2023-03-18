@@ -15,6 +15,7 @@
     "@supabase/auth-ui-react": "^0.3.3",
     "@supabase/auth-ui-shared": "^0.1.2",
     "@supabase/supabase-js": "^2.10.0",
+    "dompurify": "^3.0.1",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
     "next": "^13.1.6",

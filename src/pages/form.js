@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/Form.module.css';
 import utilStyles from '../styles/utils.module.css';
@@ -7,6 +7,8 @@ import FormStepTwo from '@/components/FormStepTwo';
 import FormStepThree from '@/components/FormStepThree';
 import Layout from '@/components/Layout';
 import ReactQuill from 'react-quill';
+import DOMPurify from 'dompurify';
+
 
 export default function Form() {
     const [stepOneComplete, setStepOneComplete] = useState(false);
@@ -30,9 +32,9 @@ export default function Form() {
       tag3: ""
     });
     const [jobDescription, setJobDescription] = useState('');
-    const editorRef = useRef(null);
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+ 
    
   
 
@@ -102,9 +104,6 @@ export default function Form() {
         case 'job-summary':
           setJobSummary(e.target.value);
           break;
-       // case 'job-desc': 
-         // setJobDescription(e.target.value);
-         // break;
         case 'company-logo':
           setCompanyLogo(URL.createObjectURL(e.target.files[0]));
           setLogoFile(e.target.files[0]);
@@ -115,11 +114,17 @@ export default function Form() {
    };
 
    const handleQuillChange = () => {
-    if (editorRef.current) {
-      setJobDescription(editorRef.current.getEditor().root.innerHTML);
-    }
+    let quillContent = document.querySelector('.ql-editor').innerHTML;
+      setJobDescription(quillContent);
+      console.log('before Sanitize', jobDescription);
+  };
+
+  const sanitizeQuillContent = () => {
+    const sanitizedJobDesc = DOMPurify.sanitize(jobDescription);
+    console.log('after Sanitize', sanitizedJobDesc);
+    setJobDescription(sanitizedJobDesc);
   }
-  
+
 
     const handleStepOne = () => {
         setStepOneComplete(true);
@@ -129,6 +134,8 @@ export default function Form() {
     const handleStepTwo = () => {
         setStepTwoComplete(true);
         setStep('Step 3: Preview your listing');
+        sanitizeQuillContent();
+        
     }
 
     const handleStepTwoBack = () => {
@@ -146,6 +153,8 @@ export default function Form() {
       setStepThreeComplete(false);
       setStepTwoComplete(false);
       setStep('Step 2: Add details about the role');
+     
+     
     }
 
     const handleTagChange = (e) => {
@@ -155,9 +164,6 @@ export default function Form() {
         [name]: value,
       }));
     };
-
-
-   
   
     
     return(
