@@ -46,9 +46,7 @@ export default function JobPost({ job }) {
         </section>
         <section className={styles.jobSection}>
           <div className={styles.jobDescCont}>
-            <p className={styles.jobText}>
-                {job.job_desc}
-            </p>
+           <div dangerouslySetInnerHTML={{__html: job.job_desc}} />
             </div>
             <div className={styles.applyModule}>
                 <h3>{job.job_title}</h3>
@@ -86,7 +84,7 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps({ params }) {
-    // Fetch necessary data for the blog post using params.id
+    // Fetch necessary data for the post using params.id
     let { data, error } = await supabase
         .from('jobs')
         .select('*')

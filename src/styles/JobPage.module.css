@@ -111,12 +111,59 @@
     margin: 10em 10vw;
 }
 
-.jobText {
+.jobDescCont h2 {
+  font-size: 1.5em;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 1em 0;
+  color: #333;
+}
+
+.jobDescCont p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 2em 0;
+  color: #313131;
+}
+
+.jobDescCont p > br {
+    display: none;
+}
+
+.jobDescCont p strong {
+    color: black;
+}
+
+.jobDescCont ul, .jobDescCont ol {
+    list-style-type: none;
+    margin-left: 1rem;
+  }
+  
+.jobDescCont li {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 0.8em;
+    color: #313131;
+  }
+
+.jobDescCont ul li::before {
+    content: " ";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-right: 15px;
+    background-color: var( --bgDark);
+    border-radius: 1px;
+    vertical-align: middle;
+  }
+
+/*.jobText {
     color: #333333;
     line-height: 1.9;
     font-size: 1em;
     max-width: 650px;
 }
+*/
 
 .applyModule {
     position: sticky;
