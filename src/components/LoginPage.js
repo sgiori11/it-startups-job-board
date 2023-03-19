@@ -69,4 +69,4 @@ const LoginPage = ({ showModal, setShowModal }) => {
   )
 }
 
-export default LoginPage
+export default LoginPage;

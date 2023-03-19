@@ -7,7 +7,7 @@ import Link from 'next/link';
 import purpleBg from '../../public/images/purplebg.svg'
 import { useUser } from '@supabase/auth-helpers-react'
 import { useState } from 'react'
-import LoginScreen from './LoginScreen';
+import LoginScreen from './LoginPage';
 
 const HeroSection = () => {
 

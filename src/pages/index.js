@@ -3,7 +3,7 @@ import HeroSection from '@/components/HeroSection'
 import Head from 'next/head'
 import Layout from '@/components/Layout';
 import JobBoard from '@/components/JobBoard';
-import Auth from '@/components/LoginScreen';
+import Auth from '@/components/LoginPage';
 
 
 export default function Home({ jobs }) {
