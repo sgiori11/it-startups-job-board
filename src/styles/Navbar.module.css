@@ -35,6 +35,24 @@
 
 }
 
+.loginBtn {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    border: 2px solid #FC62FF;
+    color: black;
+    background-color: white;
+    font-weight: 700;
+    padding: 0.7em 2.5em;
+    cursor: pointer;
+}
+
+.loginBtn:hover {
+    background-color: #FC62FF;
+    color: white;
+    transition: 0.2s all ease;
+}
+
 
 @media only screen and (max-width: 600px) {
     .nav a {
@@ -51,5 +69,10 @@
 
     .logo {
         width: 120px;
+    }
+
+    .loginBtn:hover {
+        background-color: white;
+        color: black;
     }
 }

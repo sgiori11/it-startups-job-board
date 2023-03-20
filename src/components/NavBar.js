@@ -46,7 +46,11 @@ export default function NavBar() {
             My profile
           </Link>
         ) : (
-          <button onClick={handleLoginClick}>Log in</button>
+          <button 
+            onClick={handleLoginClick}
+            className={styles.loginBtn}
+            >Log in
+          </button>
         )}
         {showModal && (
           <LoginPage showModal={showModal} setShowModal={setShowModal} />
