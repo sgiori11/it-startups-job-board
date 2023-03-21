@@ -13,6 +13,12 @@ const LoginPage = ({ showModal, setShowModal }) => {
     setShowModal(false)
   };
 
+  async function signInWithEmail() {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: 'example@email.com',
+      password: 'example-password',
+    })
+  }
   //useEffect(() => {
     //async function loadData() {
      // const { data } = await supabaseClient.from('test').select('*')
@@ -26,8 +32,9 @@ const LoginPage = ({ showModal, setShowModal }) => {
     return (
     <div className={showModal ? styles.loginOverlay : styles.closeModal}>
       <div className={styles.loginContainer}>
-        <button className={styles.dismissButton}
-                onClick={closeModal}
+        <button 
+          className={styles.dismissButton}
+          onClick={closeModal}
         >
           <svg width="23" height="25" viewBox="0 0 29 31" fill="white" xmlns="http://www.w3.org/2000/svg">
           <rect width="31" height="31" fill="white"/>
@@ -58,13 +65,14 @@ const LoginPage = ({ showModal, setShowModal }) => {
             },
           }}
           supabaseClient={supabaseClient}
-          providers={['google', 'apple']}
+          providers={['google']}
         />
       </div>
     </div>
     )
 
   return (
+    //Return their profile page
     <p>congrats, you're logged in!</p>
   )
 }
