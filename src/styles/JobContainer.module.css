@@ -20,10 +20,11 @@
 
 .container:hover {
     box-shadow: none;
-    transform: translateY(2px);
-    transition: transform 0.2s ease;
+    transform: translateY(3px);
+    transition: transform 0.1s ease;
     cursor: pointer;
-    outline: 1px solid #D7D6FF;
+    outline: 1px solid #423ff8;
+   
 }
 
 .previewContainer {
