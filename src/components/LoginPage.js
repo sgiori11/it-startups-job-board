@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import styles from '../styles/LoginScreen.module.css'
 
 const LoginPage = ({ showModal, setShowModal }) => {
+  let [email, setEmail] = useState('');
   const supabaseClient = supabase
   const user = useUser()
   const [data, setData] = useState()
@@ -16,8 +17,7 @@ const LoginPage = ({ showModal, setShowModal }) => {
   async function signInWithEmail() {
     const { data, error } = await supabase.auth.signInWithPassword({
       email: 'example@email.com',
-      password: 'example-password',
-    })
+      password: 'example-password', 
   }
   //useEffect(() => {
     //async function loadData() {
@@ -44,6 +44,7 @@ const LoginPage = ({ showModal, setShowModal }) => {
         </button>
         <p>Log in to post a job on Startup Finder!</p>
         <Auth
+        onSubmit=
         redirectTo="http://localhost:3000/"
         appearance={{
           className: {
