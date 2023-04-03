@@ -5,7 +5,7 @@ import utilStyles from '../styles/utils.module.css';
 import FormStepOne from '@/components/FormStepOne';
 import FormStepTwo from '@/components/FormStepTwo';
 import FormStepThree from '@/components/FormStepThree';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import ReactQuill from 'react-quill';
 import DOMPurify from 'dompurify';
 

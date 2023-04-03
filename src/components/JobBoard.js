@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/JobBoard.module.css';
 import JobContainer from '@/components/JobContainer'
-import Link from 'next/link'
+import Link from 'next/link';
 import slugify from 'slugify';
 
 const JobBoard = ({ jobs }) => {

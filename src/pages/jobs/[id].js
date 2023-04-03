@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout';
 import { supabase } from '../../lib/supabaseClient';
 import slugify from 'slugify';
 import styles from '../../styles/JobPage.module.css'
