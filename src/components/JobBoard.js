@@ -55,14 +55,14 @@ return (
            <p>Loading...</p>
            ) : (
           jobs.map((job) => 
-              <Link href={`/jobs/${job.id}`}>
+              <Link href={`/jobs/${job.id}`} key={slugify(job.job_title)}>
                 <JobContainer job={job} key={job.id} />
               </Link>
               )
            )
           ) : (
           searchResults.map((job) => 
-              <Link href={`/jobs/${job.id}`}>
+              <Link href={`/jobs/${job.id}`} key={slugify(job.job_title)}>
                 <JobContainer job={job} key={job.id} />
                </Link>
               )

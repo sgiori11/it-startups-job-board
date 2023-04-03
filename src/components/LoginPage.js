@@ -75,7 +75,7 @@ const LoginPage = ({ showModal, setShowModal }) => {
 
   return (
     //Return their profile page
-    <p>congrats, you're logged in!</p>
+    <p>congrats, you&apos;re logged in!</p>
   )
 }
 
