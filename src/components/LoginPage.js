@@ -39,8 +39,8 @@ const LoginPage = ({ showModal, setShowModal }) => {
         >
           <svg width="23" height="25" viewBox="0 0 29 31" fill="white" xmlns="http://www.w3.org/2000/svg">
           <rect width="31" height="31" fill="white"/>
-          <line x1="2.74125" y1="4" x2="26" y2="27.2587" stroke="black" stroke-width="3.87671" stroke-linecap="round"/>
-          <line x1="2.32593" y1="27.2588" x2="25.5847" y2="4" stroke="black" stroke-width="3.87671" stroke-linecap="round"/>
+          <line x1="2.74125" y1="4" x2="26" y2="27.2587" stroke="black" strokeWidth="3.87671" strokeLinecap="round"/>
+          <line x1="2.32593" y1="27.2588" x2="25.5847" y2="4" stroke="black" strokeWidth="3.87671" strokeLinecap="round"/>
           </svg>
         </button>
         <p>Log in to post a job on Startup Finder!</p>
