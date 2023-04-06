@@ -8,12 +8,12 @@ import dynamic from 'next/dynamic';
 
 
 
-
 export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, jobDescription, handleTagChange, handleQuillChange}) {
 
-  const QuillNoSSRWrapper = dynamic(() => import('react-quill'), {
-    ssr: false,
-  });
+
+const QuillNoSSRWrapper = dynamic(() => import('./QuillNoSSRWrapper'), {
+  ssr: false,
+});
   
     const handleNext = (e) => {
         e.preventDefault();

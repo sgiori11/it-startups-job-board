@@ -11,17 +11,11 @@ module.exports = {
   },
   // Other Next.js configuration options...
   ...nextConfig,
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@": path.resolve(__dirname, "components"),
     };
-
-    if (isServer) {
-      // Replaces the 'quill' library with a dummy module during server-side rendering
-      config.resolve.alias.quill = './empty-module.js';
-    }
-
     return config;
   },
 };
