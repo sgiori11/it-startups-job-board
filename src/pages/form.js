@@ -7,7 +7,6 @@ import FormStepTwo from '@/components/FormStepTwo';
 import FormStepThree from '@/components/FormStepThree';
 import Layout from '@/components/layout';
 import DOMPurify from 'dompurify';
-import ReactQuill from 'react-quill';
 
 
 export default function Form() {
