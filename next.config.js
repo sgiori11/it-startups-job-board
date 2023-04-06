@@ -10,13 +10,18 @@ module.exports = {
     domains: ["hewqsbwtsubfefrjhlol.supabase.co"],
   },
   // Other Next.js configuration options...
-  nextConfig,
-  webpack: (config) => {
+  ...nextConfig,
+  webpack: (config, { isServer }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@": path.resolve(__dirname, "components"),
     };
+
+    if (isServer) {
+      // Replaces the 'quill' library with a dummy module during server-side rendering
+      config.resolve.alias.quill = './empty-module.js';
+    }
+
     return config;
   },
 };
-
