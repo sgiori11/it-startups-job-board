@@ -1,16 +1,22 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+}
+
+module.exports = {
   images: {
     domains: ["hewqsbwtsubfefrjhlol.supabase.co"],
   },
-  webpack: (config, options) => {
-    // Add support for the "@/components" alias
-    config.resolve.alias["@"] = path.join(__dirname, "components");
-
-    // Return the updated config
+  // Other Next.js configuration options...
+  nextConfig,
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@": path.resolve(__dirname, "components"),
+    };
     return config;
   },
 };
 
-module.exports = nextConfig;
