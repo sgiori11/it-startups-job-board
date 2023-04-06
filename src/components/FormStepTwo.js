@@ -2,18 +2,13 @@ import { useState } from 'react';
 import styles from '../styles/Form.module.css';
 import Link from 'next/link';
 import Button from './Button';
-import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import dynamic from 'next/dynamic';
-
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 
 export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, jobDescription, handleTagChange, handleQuillChange}) {
 
-
-const QuillNoSSRWrapper = dynamic(() => import('./QuillNoSSRWrapper'), {
-  ssr: false,
-});
   
     const handleNext = (e) => {
         e.preventDefault();
@@ -100,7 +95,7 @@ const QuillNoSSRWrapper = dynamic(() => import('./QuillNoSSRWrapper'), {
          </div>
         </div>
          <label className={styles.label} htmlFor="job-desc">Job description *</label>
-         <QuillNoSSRWrapper 
+         <ReactQuill
             className={styles.quillEditor}
             id="job-desc" 
             name="job-desc" 
