@@ -100,7 +100,9 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
-            job: data,
+          job: data,
         },
-    };
-  }
+        revalidate: 10, // Attempt regeneration every 60 seconds
+      };
+    }
+  
