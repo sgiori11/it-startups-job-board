@@ -56,7 +56,8 @@
 
 @media only screen and (max-width: 600px) {
     .nav a {
-        font-size: 1em;
+        font-size: 14px;
+        margin-left: 1em;
     }
 
     .nav a:first-of-type {
@@ -70,6 +71,17 @@
     .logo {
         width: 120px;
     }
+
+    .loginBtn {
+        font-size: 14px;
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+        font-weight: 400;
+        padding: 0.5em 1em;
+        
+    }
+    
 
     .loginBtn:hover {
         background-color: white;

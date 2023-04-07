@@ -84,7 +84,7 @@
     }
 
     .h2 {
-        font-size: 2.2em;
+        font-size: 1.8em;
     }
     
     .h2::before {
@@ -94,7 +94,6 @@
     .searchBar::placeholder {
         color: black;
         font-size: 1.1em;
-        background: url(/images/search.svg)
-            no-repeat 25%;
+        background: none;
     }   
 }

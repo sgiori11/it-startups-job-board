@@ -23,7 +23,6 @@
     transform: translateY(3px);
     transition: transform 0.1s ease;
     cursor: pointer;
-    outline: 1px solid #423ff8;
    
 }
 
@@ -165,11 +164,11 @@
     }
 
     .jobTitle {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .companyName {
-        font-size: 0.95em;
+        font-size: 0.9em;
     }
 
     .jobDesc {
@@ -189,7 +188,7 @@
         position: absolute;
         top: 0;
         right: 1em;
-        font-size: 0.95em;
+        font-size: 0.9em;
         margin-bottom: 0.8em;
         margin-top: 1em;
         padding-left: 0em;

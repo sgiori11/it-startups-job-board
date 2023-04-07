@@ -305,3 +305,27 @@
     
 
 }
+
+@media only screen and (max-width: 600px) {
+
+    .jobTitle {
+        font-size: 1.5em;
+    }
+    
+    .companyName {
+        font-size: 1.2em;
+    }
+
+    .tag {
+        font-size: 1em;
+    }
+
+    .jobDescCont h2 {
+        font-size: 1.2em;
+        font-weight: 900;
+        line-height: 1.2;
+        margin: 1em 0;
+        color: #333;
+      }
+
+}

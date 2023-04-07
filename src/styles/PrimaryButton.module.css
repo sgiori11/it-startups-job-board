@@ -30,3 +30,14 @@
    color: var(--bgDark);
     
 }
+
+@media only screen and (max-width: 600px) {
+    .button {
+        width: auto;
+        height: auto;
+        font-size: 1em;
+        padding: 0.8em 1.5em;
+    }
+
+
+}
