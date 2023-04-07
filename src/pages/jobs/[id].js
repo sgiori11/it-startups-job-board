@@ -66,43 +66,25 @@ export default function JobPost({ job }) {
   </section>
 )}
 
-export async function getStaticPaths() {
-    // Return a list of possible value for id
-    let { data } = await supabase.from('jobs').select('id');
 
-    let paths = data.map((job) => ({
-        params: {
-            id: job.id.toString(), 
-        },
-    }));
-
-    return {
-        paths,
-        fallback: true,
-    };
-  }
-
-
-export async function getStaticProps({ params }) {
-    // Fetch necessary data for the post using params.id
-    let { data, error } = await supabase
-        .from('jobs')
-        .select('*')
-        .eq('id', params.id)
-        .single();
-
-    if (error) {
-        console.error(error);
-        return {
+    export async function getServerSideProps({ params }) {
+        // Fetch necessary data for the post using params.id
+        let { data, error } = await supabase
+          .from('jobs')
+          .select('*')
+          .eq('id', params.id)
+          .single();
+      
+        if (error) {
+          console.error(error);
+          return {
             notFound: true,
+          };
+        }
+      
+        return {
+          props: {
+            job: data,
+          },
         };
-    }
-
-    return {
-        props: {
-          job: data,
-        },
-        revalidate: 10, // Attempt regeneration every 60 seconds
-      };
-    }
-  
+      }
