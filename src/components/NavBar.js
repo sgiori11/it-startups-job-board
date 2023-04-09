@@ -12,6 +12,20 @@ export default function NavBar() {
   const user = useUser()
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
+    const handleAuthStateChange = (event, session) => {
+      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+        setShowModal(false);
+      }
+    };
+
+    const { data: authListener } = supabase.auth.onAuthStateChange(handleAuthStateChange);
+
+    return () => {
+      authListener.unsubscribe();
+    };
+  }, []);
+
     const handleLoginClick = () => {
           setShowModal(true);
         }
