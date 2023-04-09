@@ -23,7 +23,7 @@ export default function NavBar() {
     const { data: authListener } = supabase.auth.onAuthStateChange(handleAuthStateChange);
 
     return () => {
-      authListener.unsubscribe();
+      authListener?.unsubscribe?.();
     };
   }, [user]);
 
