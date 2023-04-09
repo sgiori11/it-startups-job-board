@@ -14,4 +14,4 @@ export default function AuthUI() {
       providers={null}
     />
 
-)};
+)}; 
