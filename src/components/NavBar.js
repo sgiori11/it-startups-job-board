@@ -11,7 +11,7 @@ import utilStyles from '../styles/utils.module.css'
 
 export default function NavBar() {
   const user = useUser()
-  const [isLoggedIn, setIsLoggedIn] = useState(!user);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
