@@ -11,12 +11,16 @@ import utilStyles from '../styles/utils.module.css'
 
 export default function NavBar() {
   const user = useUser()
+  const [isLoggedIn, setIsLoggedIn] = useState(!user);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const handleAuthStateChange = (event, session) => {
-      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT') {
+      if (event === 'SIGNED_IN') {
+        setIsLoggedIn(true);
         setShowModal(false);
+      } else if (event === 'SIGNED_OUT') {
+        setIsLoggedIn(false);
       }
     };
 
@@ -25,7 +29,7 @@ export default function NavBar() {
     return () => {
       authListener?.unsubscribe?.();
     };
-  }, [user]);
+  }, []);
 
     const handleLoginClick = () => {
           setShowModal(true);
@@ -53,7 +57,7 @@ export default function NavBar() {
         >
           Startups
         </Link>
-        {user ? (
+        {isLoggedIn ? (
           <Link 
             className={styles.navLink + ' ' + utilStyles.headingL + ' ' + styles.myProfile}
             href="/profile"
