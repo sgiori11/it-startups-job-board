@@ -67,7 +67,24 @@ export default function JobPost({ job }) {
 )}
 
 
-    export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  // Return a list of possible value for id
+  let { data } = await supabase.from('jobs').select('id');
+
+  let paths = data.map((job) => ({
+      params: {
+          id: job.id.toString(), 
+      },
+  }));
+
+  return {
+      paths,
+      fallback: 'blocking',
+  };
+}
+
+
+    export async function getStaticProps({ params }) {
         // Fetch necessary data for the post using params.id
         let { data, error } = await supabase
           .from('jobs')
