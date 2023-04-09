@@ -25,7 +25,7 @@ export default function NavBar() {
     return () => {
       authListener.unsubscribe();
     };
-  }, []);
+  }, [user]);
 
     const handleLoginClick = () => {
           setShowModal(true);
