@@ -1,13 +1,13 @@
 import { Auth } from '@supabase/auth-ui-react'
 import { supabase } from '../lib/supabaseClient';
-import { useUser } from '@supabase/auth-helpers-react'
+import { useUser, useSession } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 import styles from '../styles/LoginScreen.module.css'
 
 const LoginPage = ({ showModal, setShowModal }) => {
-  //let [email, setEmail] = useState('');
-  const supabaseClient = supabase
-  const user = useUser()
+  const supabaseClient = supabase;
+  const user = useUser();
+  const session = useSession();
   //const [data, setData] = useState()
 
   function closeModal() {
@@ -26,6 +26,7 @@ const LoginPage = ({ showModal, setShowModal }) => {
 
   if (!user)
     return (
+      
     <div className={showModal ? styles.loginOverlay : styles.closeModal}>
       <div className={styles.loginContainer}>
         <button 
@@ -67,10 +68,16 @@ const LoginPage = ({ showModal, setShowModal }) => {
     </div>
     )
 
-  return (
-    //Return their profile page
-    <p>congrats, you&apos;re logged in!</p>
-  )
+    return (
+      //Return their profile page
+      <>
+        <p>congrats, you&apos;re logged in!</p>
+        {(() => {
+          console.log("Session:", session);
+          console.log("User:", user);
+        })()}
+      </>
+    );
 }
 
 export default LoginPage; 
