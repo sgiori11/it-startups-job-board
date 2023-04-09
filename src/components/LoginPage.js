@@ -8,21 +8,21 @@ const LoginPage = ({ showModal, setShowModal }) => {
   const supabaseClient = supabase;
   const user = useUser();
   const session = useSession();
-  //const [data, setData] = useState()
+  const [data, setData] = useState()
 
   function closeModal() {
     setShowModal(false)
   };
 
   
-  //useEffect(() => {
-    //async function loadData() {
-     // const { data } = await supabaseClient.from('test').select('*')
-     // setData(data)}
+  useEffect(() => {
+    async function loadData() {
+     const { data } = await supabaseClient.from('jobs').select('*')
+     setData(data)}
 
     // Only run query once user is logged in.
-    //if (user) loadData()
-  //}, [user])
+    if (user) loadData()
+  }, [user])
 
   if (!user)
     return (
