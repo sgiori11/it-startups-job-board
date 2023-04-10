@@ -91,9 +91,26 @@
        display: none;
     }
 
+    .searchBar[type="search"]::-webkit-search-cancel-button {
+        padding-right: 0px;
+      }
+
     .searchBar::placeholder {
         color: black;
-        font-size: 1.1em;
+        font-size: 1em;
         background: none;
     }   
+
+    .searchBar {
+        margin-bottom: 1em;
+        position: flex;
+        text-align: center;
+        height: 60px;
+        width: 92vw;
+        margin-right: 1em;
+        margin-left: 1em;
+        border: 1px solid #cfd4f2a9;
+        border-radius: 2px;
+        background: linear-gradient(40deg, #cfd4f2a9 24%, rgba(0, 0, 0, 0) 100%);
+    }
 }

@@ -59,7 +59,7 @@
 
 .companyName {
     font-size: 1em;
-    color: #555;
+    color: #2e2e2e;
     font-weight: 500;
 }
 
@@ -194,7 +194,7 @@
         padding-left: 0em;
         background-color: #ebebfc;
         color: #3900B1;
-        font-weight: 300;
+        font-weight: 500;
         padding: 0.2em 0.4em;
         border-radius: 2px;
     }
