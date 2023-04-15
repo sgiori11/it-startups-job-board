@@ -30,7 +30,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #D4C9FF;
+    border: 1px solid #EFEFEF;
+    -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
+    box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
+    border-radius: 5px;
     min-height: 180px;
     background-color: white;
     margin: 0.5em 0em 3em 0;

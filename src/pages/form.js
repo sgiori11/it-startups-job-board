@@ -68,7 +68,7 @@ export default function Form() {
         if (jobInsertResult.error || logoUploadResult.error) {
           throw new Error('Error submitting job listing');
         } else {
-          setSuccessMessage('Your job listing has been submitted successfully!');
+          setSuccessMessage('Success! Your job listing has been posted.');
           setJobTitle('');
           setCompanyName('');
           setContractType('');
@@ -76,6 +76,7 @@ export default function Form() {
           setJobSummary('');
           setTags({ tag1: '', tag2: '', tag3: ''});
           setJobDescription('');
+          handleStepThree();
 
         }
       } catch (error) {

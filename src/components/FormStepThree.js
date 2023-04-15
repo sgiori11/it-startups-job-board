@@ -7,10 +7,10 @@ import JobPreviewContainer from './JobPreviewContainer';
 export default function FormStepThree({ stepTwoComplete, stepThreeComplete, handleStepThree, handleStepThreeBack,
  jobTitle, companyName, contractType, location, jobSummary, companyLogo, tags }) {
 
-    const handleNext = (e) => {
-        e.preventDefault();
-        handleStepThree();
-      };
+    //const handleNext = (e) => {
+        //e.preventDefault();
+      //  handleStepThree();
+     // };
 
       const handleBack = (e) => {
         e.preventDefault();
@@ -38,7 +38,7 @@ export default function FormStepThree({ stepTwoComplete, stepThreeComplete, hand
 
       <div className={styles.buttonsContainer}>
         <Button className={styles.prevStepBtn} onClick={handleBack} text="Back" />
-        <button className={styles.nextStepBtn}  type="submit">Publish Job</button>
+        <button className={styles.nextStepBtn} type="submit">Publish Job</button>
       </div>
     </section>
     )
