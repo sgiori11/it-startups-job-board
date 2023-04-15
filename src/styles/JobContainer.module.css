@@ -161,15 +161,15 @@
             "logo sectionOne"
             "logo sectionTwo";
         column-gap: 1em;
-        border: 1px solid #D4C9FF;
         background-color: white;
         margin: 0.5em 0;
         padding: 1em;
         max-width: 400px;
-        -webkit-box-shadow: none; 
-        box-shadow: none;
         border-radius: 2px;
         min-height: 0px;
+        border: 1px solid #EFEFEF;
+        -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
+        box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
     }
 
     .logoContainer {
@@ -213,7 +213,7 @@
         padding-left: 0em;
         background-color: #ebebfc;
         color: #3900B1;
-        font-weight: 500;
+        font-weight: 300;
         padding: 0.2em 0.4em;
         border-radius: 2px;
     }
