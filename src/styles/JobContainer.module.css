@@ -139,6 +139,7 @@
   }
 
   @media only screen and (max-width: 680px) {
+
     .container:hover {
         transform: none;
         -webkit-box-shadow: none; 
@@ -147,10 +148,19 @@
     }
 
     .container, .previewContainer {
+      /*  
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+    */
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "logo sectionOne"
+            "logo sectionTwo";
+        column-gap: 1em;
         border: 1px solid #D4C9FF;
         background-color: white;
         margin: 0.5em 0;
@@ -163,8 +173,12 @@
     }
 
     .logoContainer {
-        display: none;
+        grid-area: logo;
+        align-self: center;
+        width: 50px !important;
+        height: 50px !important;
     }
+
 
     .jobTitle {
         font-size: 1em;
@@ -179,11 +193,13 @@
      }
 
     .sectionOne {
+        grid-area: sectionOne;
         width: 100%;
         margin: 0;
     }
 
     .sectionTwo {
+        grid-area: sectionTwo;
         width: 100%;
     }
 

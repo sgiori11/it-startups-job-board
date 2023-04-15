@@ -15,6 +15,7 @@ const JobContainer = ({ job }) => {
                 />
              </div>
         
+          
             <div className={styles.sectionOne}>
                 <h3 className={styles.jobTitle}>
                     {job.job_title}
@@ -42,7 +43,8 @@ const JobContainer = ({ job }) => {
                     <p className={styles.tag}>#{job.tag_two}</p>
                     <p className={styles.tag}>#{job.tag_three}</p>
                 </div>
-            </div>
+         
+         </div>
         </div>
     )
 };
