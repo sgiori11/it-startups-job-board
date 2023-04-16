@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { useUser } from '@supabase/auth-helpers-react'
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/Form.module.css';
 import utilStyles from '../styles/utils.module.css';
@@ -10,7 +11,7 @@ import DOMPurify from 'dompurify';
 
 
 export default function Form() {
-    const user = supabase.auth.user();
+    const user = useUser();
     const [stepOneComplete, setStepOneComplete] = useState(false);
     const [stepTwoComplete, setStepTwoComplete] = useState(false);
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
