@@ -47,7 +47,7 @@ export default function Form() {
            supabase
           .from('jobs')
           .insert({
-            user_id: user.id,
+            //user_id: user.id,
             job_title: jobTitle,
             company_name: companyName,
             contract_type: contractType,
