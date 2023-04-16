@@ -10,6 +10,7 @@ import DOMPurify from 'dompurify';
 
 
 export default function Form() {
+    const user = supabase.auth.user();
     const [stepOneComplete, setStepOneComplete] = useState(false);
     const [stepTwoComplete, setStepTwoComplete] = useState(false);
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
@@ -39,23 +40,23 @@ export default function Form() {
 
     const handleSubmit = async (event) => {
       event.preventDefault();
-      console.log("form submitted");
       try {
         const [jobInsertResult, logoUploadResult] = await Promise.all ([
 
            supabase
           .from('jobs')
           .insert({
-          job_title: jobTitle,
-          company_name: companyName,
-          contract_type: contractType,
-          location: location,
-          summary: jobSummary,
-          tag_one: tags.tag1,
-          tag_two: tags.tag2,
-          tag_three: tags.tag3,
-          job_desc: jobDescription,
-          logo_url: filePath,
+            user_id: user.id,
+            job_title: jobTitle,
+            company_name: companyName,
+            contract_type: contractType,
+            location: location,
+            summary: jobSummary,
+            tag_one: tags.tag1,
+            tag_two: tags.tag2,
+            tag_three: tags.tag3,
+            job_desc: jobDescription,
+            logo_url: filePath,
         }),
 
         supabase
