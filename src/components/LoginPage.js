@@ -1,32 +1,20 @@
 import { Auth } from '@supabase/auth-ui-react'
 import { supabase } from '../lib/supabaseClient';
-import { useUser, useSession } from '@supabase/auth-helpers-react'
+//import { useUser, useSession } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 import styles from '../styles/LoginScreen.module.css'
+import { useUser } from "../context/user";
 
 const LoginPage = ({ showModal, setShowModal }) => {
-  const supabaseClient = supabase;
-  const user = useUser();
-  const session = useSession();
-  const [data, setData] = useState()
+    const { user } = useUser();
+    console.log('User:', user);
 
-  function closeModal() {
-    setShowModal(false)
-  };
+   function closeModal() {
+     setShowModal(false);
+   }
 
-  
-  useEffect(() => {
-    async function loadData() {
-     const { data } = await supabaseClient.from('jobs').select('*')
-     setData(data)}
-
-    // Only run query once user is logged in.
-    if (user) loadData()
-  }, [user])
-
-  if (!user)
+  if (!user) {
     return (
-      
     <div className={showModal ? styles.loginOverlay : styles.closeModal}>
       <div className={styles.loginContainer}>
         <button 
@@ -61,23 +49,16 @@ const LoginPage = ({ showModal, setShowModal }) => {
               },
             },
           }}
-          supabaseClient={supabaseClient}
+          supabaseClient={supabase}
           providers={['google']}
         />
       </div>
     </div>
     )
-
-    return (
-      //Return their profile page
-      <>
-        <p>congrats, you&apos;re logged in!</p>
-        {(() => {
-          console.log("Session:", session);
-          console.log("User:", user);
-        })()}
-      </>
-    );
-}
-
+} else {
+  return (
+    <p>You're logged in</p>
+  )
+ };
+} 
 export default LoginPage; 

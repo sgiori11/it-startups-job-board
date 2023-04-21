@@ -1,39 +1,33 @@
 import { supabase } from '../lib/supabaseClient';
 import { useState, useEffect } from 'react';
-import { useUser } from '@supabase/auth-helpers-react'
+//import { useUser, useSession } from '@supabase/auth-helpers-react'
 import LoginPage from './LoginPage';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.css'
 import logo from '../../public/images/logo.svg'
 import utilStyles from '../styles/utils.module.css'
+import { useUser } from "../context/user";
 
 
 export default function NavBar() {
-  const user = useUser()
-  const [isLoggedIn, setIsLoggedIn] = useState(!!user);
+ // const user = useUser()
+ // const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   const [showModal, setShowModal] = useState(false);
+  const { user } = useUser();
 
-  useEffect(() => {
-    const handleAuthStateChange = (event, session) => {
-      if (event === 'SIGNED_IN') {
-        setIsLoggedIn(true);
-        setShowModal(false);
-      } else if (event === 'SIGNED_OUT') {
-        setIsLoggedIn(false);
-      }
-    };
 
-    const { data: authListener } = supabase.auth.onAuthStateChange(handleAuthStateChange);
-
-    return () => {
-      authListener?.unsubscribe?.();
-    };
-  }, []);
+useEffect(() => {
+    if (user) {
+      setShowModal(false);
+    }
+  }, [user]);
 
     const handleLoginClick = () => {
+       if (!user) {
           setShowModal(true);
         }
+       };
 
     return(
       <nav className={styles.nav}>
@@ -57,7 +51,7 @@ export default function NavBar() {
         >
           Startups
         </Link>
-        {isLoggedIn ? (
+        {user ? (
           <Link 
             className={styles.navLink + ' ' + utilStyles.headingL + ' ' + styles.myProfile}
             href="/profile"
@@ -71,7 +65,7 @@ export default function NavBar() {
             >Log in
           </button>
         )}
-        {showModal && (
+        {!user && showModal && (
           <LoginPage showModal={showModal} setShowModal={setShowModal} />
         )}
       </nav>

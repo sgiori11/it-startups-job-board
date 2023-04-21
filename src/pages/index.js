@@ -7,7 +7,6 @@ import Auth from '@/components/LoginPage';
 
 
 export default function Home({ jobs }) {
-  console.log(jobs);
   return (
     <Layout>
       <Head>
