@@ -56,6 +56,7 @@ export default function ProtectedAccountPage() {
   console.log('Rendered userData:', userData); // Check rendered userData
 
   return (
+   <div className={styles.pageBody}>
     <Layout>
     <div className={styles.pageWrap}>
       <header className={styles.header}>My Job Listings</header>
@@ -80,5 +81,6 @@ export default function ProtectedAccountPage() {
       </section>
      </div>
     </Layout>
+    </div>
   );
 }
