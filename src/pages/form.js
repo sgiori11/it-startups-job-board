@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import { useUser, useSession } from '@supabase/auth-helpers-react';
 import { supabase } from '../lib/supabaseClient';
 import styles from '../styles/Form.module.css';
 import utilStyles from '../styles/utils.module.css';
@@ -8,10 +7,11 @@ import FormStepTwo from '@/components/FormStepTwo';
 import FormStepThree from '@/components/FormStepThree';
 import Layout from '@/components/layout';
 import DOMPurify from 'dompurify';
+import { useUser } from '../context/user';
 
 
 export default function Form() {
-   // const { user } = useSession();
+    const { user } = useUser();
     const [stepOneComplete, setStepOneComplete] = useState(false);
     const [stepTwoComplete, setStepTwoComplete] = useState(false);
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
@@ -47,7 +47,7 @@ export default function Form() {
            supabase
           .from('jobs')
           .insert({
-           // user_id: user.id,
+            user_id: user.id,
             job_title: jobTitle,
             company_name: companyName,
             contract_type: contractType,

@@ -55,10 +55,6 @@ const LoginPage = ({ showModal, setShowModal }) => {
       </div>
     </div>
     )
-} else {
-  return (
-    <p>You're logged in</p>
-  )
- };
+ }
 } 
 export default LoginPage; 
