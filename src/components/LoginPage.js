@@ -7,7 +7,6 @@ import { useUser } from "../context/user";
 
 const LoginPage = ({ showModal, setShowModal }) => {
     const { user } = useUser();
-    console.log('User:', user);
 
    function closeModal() {
      setShowModal(false);

@@ -53,10 +53,10 @@ useEffect(() => {
         </Link>
         {user ? (
           <Link 
-            className={styles.navLink + ' ' + utilStyles.headingL + ' ' + styles.myProfile}
+            className={styles.navLink + ' ' + utilStyles.headingL + ' ' + styles.myAccount}
             href="/profile"
           >
-            My profile
+            My Account
           </Link>
         ) : (
           <button 

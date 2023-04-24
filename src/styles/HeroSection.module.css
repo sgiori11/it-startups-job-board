@@ -19,12 +19,84 @@
 .topSection {
     text-align: center;
     max-width: 700px;
-    margin-top: 8em;
+    margin-top: 8em; 
 }
 
 .btnsContainer {
     margin-top: 3em;
 }
+
+.secondaryCTA {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 100%;
+        line-height: normal;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        text-align: inherit;
+        text-decoration: none;
+        vertical-align: baseline;
+        
+        
+        
+        background-color: white;
+        outline: 2px solid var(--bgDark);
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 12px 45px;
+        color: black;
+        transition: 0.2s ease-in-out;
+        ;
+    }
+    
+    .secondaryCTA:hover {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        outline: 2px solid black;
+         
+     }
+
+
+    .primaryCTA {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: none;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 100%;
+        line-height: normal;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        text-align: inherit;
+        text-decoration: none;
+        vertical-align: baseline;
+        background-color: var(--bgDark);
+        font-size: 1.1rem;
+        outline: 2px solid var(--bgDark);
+        padding: 12px 0px;
+        width: 180px;
+        color: white;
+        margin-right: 35px;
+        transition: 0.2s ease-in-out;
+    }
+    
+    .primaryCTA:hover {
+       background-color: white;
+       color: var(--bgDark);
+        
+    }
+
 
 .uspContainer {
     width: 100%;
@@ -112,3 +184,23 @@
     }
 }
 
+    
+@media only screen and (max-width: 600px) {
+
+    .primaryCTA {
+        width: auto;
+        height: auto;
+        font-size: 1em;
+        padding: 0.8em 1.9em;
+    }
+    
+    .secondaryCTA {
+        width: auto;
+        height: auto;
+        font-size: 1em;
+        padding: 0.8em 1.9em; 
+    }
+
+
+
+}

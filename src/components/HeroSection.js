@@ -1,3 +1,4 @@
+import React from 'react';
 import utilStyles from '../styles/utils.module.css'
 import styles from '../styles/HeroSection.module.css'
 import PrimaryButton from './PrimaryButton';
@@ -5,25 +6,27 @@ import SecondaryButton from './SecondaryButton';
 import Image from 'next/image';
 import Link from 'next/link';
 import purpleBg from '../../public/images/purplebg.svg'
-import { useUser } from '@supabase/auth-helpers-react'
+import { useUser } from "../context/user";
 import { useState } from 'react'
+import { useRouter } from 'next/router';
 import LoginScreen from './LoginPage';
 
 const HeroSection = () => {
 
   const [showModal, setShowModal] = useState();
-  const user = useUser();
+  const user  = useUser();
+  const router = useRouter();
 
-    const handlePrimaryBtnClick = () => {
-        <Link href='./Form' />;
-    };
 
     const handlePostJob = () => {
+      console.log('handlePostJob called');
+      console.log('Function User:', user);
         if (!user) {
           setShowModal(true);
           } else {
+          router.push('/form')
+          console.log('Router push called');
           setShowModal(false);
-          <Link href='./Form' />;
         }
     };
 
@@ -35,8 +38,8 @@ const HeroSection = () => {
             with <span style={{fontWeight: 'bold'}}>IT</span> startups & founders
         </h1>
         <div className={styles.btnsContainer}>
-          <PrimaryButton text="Post a Job" onClick={handlePostJob} />
-          <SecondaryButton text="Find a Job" />
+          <button className={styles.primaryCTA} onClick={handlePostJob}>Post a job</button>
+          <Link href="#jobBoard" className={styles.secondaryCTA}>Find a job</Link>
         </div>
        </div>
         

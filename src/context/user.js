@@ -7,38 +7,25 @@ const Context = createContext();
 const Provider = ({ children }) => {
     const router = useRouter();
     const [user, setUser] = useState(null);
+    const [session, setSession] = useState(null);
 
     useEffect(() => {
-        const session = supabase.auth.session;
-        setUser(session?.user || null);
+        async function getActiveSession() {
+            const { data: { session: activeSession }} = await supabase.auth.getSession();
+            setSession(activeSession);
+            setUser(activeSession?.user ?? null);
+            console.log("user", user);
+            console.log("session", session);
+        }
+        getActiveSession();
 
-
-        // Subscribe to the user session and update the state when it changes
-        const authListener = supabase.auth.onAuthStateChange(
-            async (event, session) => {
-             const currentUser = (session?.user || null);
-
-             if (currentUser && currentUser.id !== user?.id) {
-                const { data: jobs } = await supabase
-                .from("jobs")
-                .select("*")
-                .eq("id", currentUser.id)
-                .single();
-
-                setUser({
-                    ...currentUser,
-                    ...jobs,
-                });
-
-                console.log('User set:', currentUser);
-            } else if (!currentUser) {
-                setUser(null);
-            }
+        const { data: { subscription: authListener }} = supabase.auth.onAuthStateChange((event, currentSession) => {
+            setSession(currentSession);
+            setUser(currentSession?.user ?? null);
         });
 
         return () => {
-            // Unsubscribe from the listener when the component is unmounted
-            authListener.subscription.unsubscribe();
+            authListener.unsubscribe();
         };
     }, []);
 
@@ -46,15 +33,14 @@ const Provider = ({ children }) => {
 
     const loginWithGoogle = async () => {
         await supabase.auth.signIn({
-          provider: "google",
+            provider: "google",
         });
-      };
-    
+    };
 
     const logout = async () => {
         await supabase.auth.signOut();
         setUser(null);
-        router.push("/")
+        router.push("/");
     };
 
     const exposed = {
@@ -63,11 +49,11 @@ const Provider = ({ children }) => {
         logout,
     };
 
-    return <Context.Provider 
-            value={exposed}
-            keepMounted={true}>
-                 {children}
-          </Context.Provider>;
+    return (
+        <Context.Provider value={exposed} keepMounted={true}>
+            {children}
+        </Context.Provider>
+    );
 };
 
 export const useUser = () => useContext(Context);

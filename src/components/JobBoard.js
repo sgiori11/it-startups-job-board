@@ -6,18 +6,7 @@ import Link from 'next/link';
 import slugify from 'slugify';
 
 const JobBoard = ({ jobs }) => {
-   // const [jobs, setJobs] = useState([]);
-
-   // useEffect(() => {
-      //fetch.('api url')
-       // .then((res) => res.json())
-        //.then((data) => {
-            //setJobs(data);
-        //});
-     //   setJobs(data); 
-   // }, []);
-    
-    
+  
 //Job search 
 const [searchResults, setSearchResults] = useState([]);
 
@@ -29,7 +18,7 @@ const handleSearch = async (e) => {
   });
 
   if (error) {
-    console.log(error);
+    console.log(error); 
     return;
   }
 
@@ -38,7 +27,7 @@ const handleSearch = async (e) => {
 
     
 return (
-    <div className={styles.jobBoard}>
+    <div id="jobBoard" className={styles.jobBoard}>
       <div className={styles.jobBoardContainer}>
         <h2 className={styles.h2}>Find your next role</h2>
         <form onSubmit={(e) => handleSearch(e)}>
@@ -51,7 +40,7 @@ return (
         </form>
 
         {searchResults.length === 0 ? (
-          jobs.length === 0 ? (
+          !jobs || jobs.length === 0 ? (
            <p>Loading...</p>
            ) : (
           jobs.map((job) => 

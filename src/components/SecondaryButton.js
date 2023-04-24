@@ -1,10 +1,11 @@
 import styles from '../styles/SecondaryButton.module.css';
-import Link from 'next/link';
+import Button from './Button'
 
-export default function SecondaryButton({ text }) {
+export default function SecondaryButton({ text, onClick }) {
+
     return(
-        <Link className={styles.button} href="/form" >
+        <Button className={styles.button} onClick={onClick} >
             {text}
-        </Link>
+        </Button>
     );
 };
