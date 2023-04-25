@@ -39,9 +39,9 @@ const JobContainer = ({ job }) => {
                 </p>
                 <div className={styles.tags}>
                     <p className={styles.tag}>#{job.contract_type}</p>
-                    <p className={styles.tag}>#{job.tag_one}</p>
-                    <p className={styles.tag}>#{job.tag_two}</p>
-                    <p className={styles.tag}>#{job.tag_three}</p>
+                    <p className={styles.tag}>{job.tag_one ? ('#' + job.tag_one) : ''}</p>
+                    <p className={styles.tag}>{job.tag_two ? ('#' + job.tag_two) : ''}</p>
+                    <p className={styles.tag}>{job.tag_three ? ('#' + job.tag_three) : ''}</p>
                 </div>
          
          </div>
