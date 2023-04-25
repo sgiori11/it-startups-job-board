@@ -3,6 +3,7 @@ import { supabase } from '../../lib/supabaseClient';
 import slugify from 'slugify';
 import styles from '../../styles/JobPage.module.css'
 import Image from 'next/image';
+import Head from 'next/head';
 
 
 export default function JobPost({ job }) {
@@ -20,6 +21,12 @@ export default function JobPost({ job }) {
   return (
    <section className={styles.pageContainer}>
     <Layout>
+     <Head>
+        <title>Italian Startup Jobs</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="" />
+     </Head>
         <section className={styles.heroSection}>
             <div className={styles.logoContainer} 
                 style={{ position: 'relative', width: '200px', height: '200px'}}>

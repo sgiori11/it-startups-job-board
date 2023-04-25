@@ -31,6 +31,7 @@ useEffect(() => {
 
     return(
       <nav className={styles.nav}>
+        <div className={styles.navContainer}>
         <Link href="/">
           <Image 
             priority 
@@ -57,6 +58,7 @@ useEffect(() => {
         {!user && showModal && (
           <LoginPage showModal={showModal} setShowModal={setShowModal} />
         )}
+        </div>
       </nav>
     );
   };

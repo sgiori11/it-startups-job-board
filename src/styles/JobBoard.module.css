@@ -39,9 +39,9 @@
     height: 60px;
     width: 100vw;
     max-width: 1000px;
-    border: 1px solid #cfd4f2a9;
+    border: 1px solid var(--bgDark);
     border-radius: 2px;
-    background: linear-gradient(40deg, #cfd4f2a9 24%, rgba(0, 0, 0, 0) 100%);
+    background: white;
 
 }
 
@@ -98,7 +98,7 @@
     .searchBar::placeholder {
         color: black;
         font-size: 1em;
-        background: none;
+        background: none !important;
     }   
 
     .searchBar {
@@ -109,8 +109,7 @@
         width: 92vw;
         margin-right: 1em;
         margin-left: 1em;
-        border: 1px solid #cfd4f2a9;
+        border: 1px solid var(--bgDark);
         border-radius: 2px;
-        background: linear-gradient(40deg, #cfd4f2a9 24%, rgba(0, 0, 0, 0) 100%);
     }
 }

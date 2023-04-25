@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <p>Built by 
+                <p>Built in Milan by 
                     <Link href="https://twitter.com/sgiori8" className={styles.Twitterlink}> Steph</Link>
                     <button className={styles.btn} onClick={() => window.location.href = `mailto:stephaniegiori9@gmail.com`}>Contact</button>
                 </p>

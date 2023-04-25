@@ -33,9 +33,9 @@ const HeroSection = () => {
     return (
       <section className={styles.heroContainer + ' ' + styles.landingImg}>
         <div className={styles.topSection}>
-        <h1 className={utilStyles.heading2Xl}>
-            We match <span style={{fontWeight: 'bold'}}>IT</span> talent 
-            with <span style={{fontWeight: 'bold'}}>IT</span> startups & founders
+        <h1 className={utilStyles.heading2Xl + ' ' + styles.headingOne}>
+            We match <span className={styles.span}>IT</span> talent 
+            with <span className={styles.span}>IT</span> startups & founders
         </h1>
         <div className={styles.btnsContainer}>
           <button className={styles.primaryCTA} onClick={handlePostJob}>Post a job</button>

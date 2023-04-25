@@ -4,11 +4,13 @@
     align-items: center;
     justify-content: center;
     width: 100vw;
-    min-height: 200px;
-    background-color: #f8f8f8;
+    min-height: 50px;
+   
+    font-size: 14px;
+    color: #2d3748;
 }
 
-.footer::before {
+/*.footer::before {
     content: "";
     position: absolute;
     top: 0;
@@ -19,28 +21,35 @@
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    opacity: 0.5; /* Adjust the opacity value (0 to 1) to control the transparency */
+    opacity: 0.5; 
     z-index: 0;
-}
+}*/
 
 
 
 .container {
-    position: relative;
-    z-index: 1;
+    display: flex;
+    justify-content: center;
     max-width: 1400px;
     margin: 3rem auto 3rem auto;
-    padding: 1em;
+    margin: 2em;
+    padding: 2em 0;
+    border-top: 1px solid #E4E7EB;
+    width: 100%;
 }
 
 .Twitterlink {
     color: var(--bgDark);
-    margin-right: 1em;
+    margin-right: 1.5em;
     font-weight: 500;
+}
+
+.Twitterlink:hover {
+    text-decoration: underline;
 }
 
 .btn {
     background-color: transparent;
     cursor: pointer;
-    color: black;
+    color: inherit;
 }
