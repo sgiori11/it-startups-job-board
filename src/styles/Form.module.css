@@ -243,7 +243,7 @@
 .input[type="file"] {
     position: relative;
     border: 1px dashed #0500D6;
-    min-height: 200px;
+    min-height: 120px;
     background-color: #F8F8FF;
     margin-bottom: 3em;
   }
@@ -253,7 +253,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 200px;
+    min-height: 120px;
     content: '';
     background: url(/images/upload2.svg) 
     no-repeat center;
