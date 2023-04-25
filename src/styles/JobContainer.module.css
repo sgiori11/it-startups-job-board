@@ -182,7 +182,10 @@
 
     .jobTitle {
         font-size: 1em;
-        max-width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 180px;
         font-weight: 700;
     }
 
@@ -242,4 +245,10 @@
   }
 
 
+  @media only screen and (max-width: 450px) {
+
+    .jobTitle {
+        max-width: 150px;
+    }
+  }
   
