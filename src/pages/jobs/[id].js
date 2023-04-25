@@ -6,6 +6,17 @@ import Image from 'next/image';
 
 
 export default function JobPost({ job }) {
+
+  const handleApplyClick = () => {
+    console.log("apply button clicked")
+    if (job.apply_link.startsWith('http://') || job.apply_link.startsWith('https://')) {
+      window.open(job.apply_link, '_blank');
+    } else if (job.apply_link.includes('@')) {
+      console.log("it's an email")
+      window.location.href = `mailto:${job.apply_link}`;
+    }
+  };
+  
   return (
    <section className={styles.pageContainer}>
     <Layout>
@@ -41,7 +52,7 @@ export default function JobPost({ job }) {
                 </div>
             </div>
             <div className={styles.sectionTwo}>
-                <a className={styles.applyCTA}>Apply</a>
+                <button className={styles.applyCTA} onClick={handleApplyClick}>Apply</button>
             </div>
         </section>
         <section className={styles.jobSection}>
@@ -59,7 +70,7 @@ export default function JobPost({ job }) {
                     <p className={styles.tag}>#{job.tag_two}</p>
                     <p className={styles.tag}>#{job.tag_three}</p>
                 </div>
-                <a className={styles.applyCTA}>Apply to job</a>
+                <button className={styles.applyCTA} onClick={handleApplyClick}>Apply to job</button>
             </div>
         </section>
     </Layout>

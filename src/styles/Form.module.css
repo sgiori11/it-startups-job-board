@@ -196,10 +196,6 @@
     height: auto;
 
   }
-
-  div.ql-container.ql-snow {
-  
-  }
   
 .ql-editor {
     height: 100% !important;
@@ -233,6 +229,15 @@
 .textArea:focus, .jobDescription:focus {
     outline: 2px solid #0500D6;
     box-shadow: none;
+}
+
+.applyLinkCont {
+    margin-bottom: 3em;
+}
+
+.applyLinkError {
+    color: red;
+    display: none;
 }
 
 .input[type="file"] {

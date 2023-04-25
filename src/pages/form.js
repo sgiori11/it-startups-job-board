@@ -33,6 +33,7 @@ export default function Form() {
       tag3: ""
     });
     const [jobDescription, setJobDescription] = useState('');
+    const [applyLink, setApplyLink] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
  
@@ -58,6 +59,7 @@ export default function Form() {
             tag_three: tags.tag3,
             job_desc: jobDescription,
             logo_url: filePath,
+            apply_link: applyLink,
         }),
 
         supabase
@@ -78,6 +80,7 @@ export default function Form() {
           setJobSummary('');
           setTags({ tag1: '', tag2: '', tag3: ''});
           setJobDescription('');
+          setApplyLink('');
           handleStepThree();
 
         }
@@ -105,6 +108,9 @@ export default function Form() {
           break;
         case 'job-summary':
           setJobSummary(e.target.value);
+          break;
+        case 'apply-link':
+          setApplyLink(e.target.value);
           break;
         case 'company-logo':
           setCompanyLogo(URL.createObjectURL(e.target.files[0]));
@@ -229,6 +235,7 @@ export default function Form() {
                   handleTagChange={handleTagChange}
                   tags={tags}
                   jobDescription={jobDescription}
+                  applyLink={applyLink}
                   handleQuillChange={handleQuillChange}
                    />
               <FormStepThree 

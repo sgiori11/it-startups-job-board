@@ -7,22 +7,40 @@ import dynamic from 'next/dynamic';
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
 
-export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, jobDescription, handleTagChange, handleQuillChange}) {
+export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneComplete, stepTwoComplete, tags, jobDescription, handleChange, handleTagChange, handleQuillChange, applyLink}) {
 
   
     const handleNext = (e) => {
         e.preventDefault();
 
-          // Get all required input fields
-      const isBlank = document.querySelector('.ql-blank');
-       
-      if (isBlank) {
-        isBlank.parentElement.style.borderColor = 'red';
-        console.log("field is not filled")
-      } else {
+      // Get all required input fields
+      const jobDescisBlank = document.querySelector('.ql-blank');
+      const applyLinkInput = document.querySelector('#apply-link');
+      const linkErrorMessage = document.querySelector('#apply-link-error')
+   
+      let isValid = true;
+
+      if (jobDescisBlank) {
+        jobDescisBlank.parentElement.style.borderColor = 'red';
+        isValid = false;
+      }
+
+      if (!applyLinkInput.value) {
+        applyLinkInput.style.borderColor = 'red';
+        isValid = false;
+      }
+
+      if  (!validateApplyLink(applyLinkInput.value)) {
+        applyLinkInput.style.borderColor = 'red';
+        linkErrorMessage.style.display = 'block';
+        isValid = false;
+      }
+      
+      if (isValid) {
         document.querySelector('.ql-container').style.borderColor = '';
+        applyLinkInput.style.borderColor = '';
+        linkErrorMessage.style.display = 'none';
         handleStepTwo();
-        console.log("field is filled")
       }
     };
     
@@ -47,6 +65,27 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
       const formats = [  'header', 'bold', 'italic', 'list', 'bullet'];
       
 
+      function isValidURL(url) {
+        const urlRegex = /^(http(s)?:\/\/.)[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/;
+        return urlRegex.test(url);
+      }      
+      
+      function isValidEmail(email) {
+        const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+        return emailRegex.test(email);
+      }
+      
+      function validateApplyLink(value) {
+        if (isValidURL(value) || isValidEmail(value)) {
+          console.log('Valid apply link');
+          return true;
+        } else {
+          console.log('Invalid apply link');
+          return false
+        }
+      }
+      
+
     return (
      <section className={
         (!stepOneComplete) ? styles.hidden :
@@ -55,6 +94,7 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
           : styles.hidden
       }>
        <div className={styles.stepTwoContainer}>
+        
         <p className={styles.label}>
             Enter up to three tags (optional):
         </p>
@@ -107,7 +147,21 @@ export default function FormStepTwo({ handleStepTwo, handleStepTwoBack, stepOneC
             modules={modules}
             formats={formats}
           />
+        <div className={styles.applyLinkCont}>
+          <label className={styles.label} htmlFor="apply-link">Application link or email address *</label>
+          <input className={styles.input}
+               placeholder="ex. https://www.google.com/"
+               type="text"
+               id="apply-link"
+               name="apply-link"
+               aria-required="true"
+               value={applyLink}
+               onChange={handleChange}
+               required />
+            <span className={styles.applyLinkError} id="apply-link-error">Please enter a valid URL or email address.</span>
+        </div>
        </div>
+       
        <div className={styles.buttonsContainer}>
         <Button className={styles.prevStepBtn} onClick={handleBack} text="Back" />
         <Button className={styles.nextStepBtn} onClick={handleNext} text="Preview" />

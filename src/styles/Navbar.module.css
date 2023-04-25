@@ -8,6 +8,7 @@
 
 }
 
+
 .nav {
     display: flex;
     align-items: center;
@@ -31,9 +32,6 @@
     transition: 0.1s ease;
 }
 
-.myAccount {
-    
-}
 
 .loginBtn {
     position: absolute;
@@ -52,6 +50,13 @@
     color: white;
     transition: 0.2s all ease;
 }
+
+.myAccount {
+    position: absolute;
+    right: 0;
+    margin-right: 30px !important;
+}
+
 
 
 @media only screen and (max-width: 600px) {
