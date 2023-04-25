@@ -10,7 +10,7 @@
 
 .headingOne {
     font-family: 'Merriweather', serif;
-    color: #2d3748;
+    color: #2d3748 !important;
     font-weight: 400;
 }
 
