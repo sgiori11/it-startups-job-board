@@ -59,6 +59,7 @@
     font-size: 1.2em;
     background: url(/images/search.svg)
         no-repeat 38%;
+    background: none;
 }   
 
 .searchBar:focus::placeholder {
@@ -71,6 +72,7 @@
     .searchBar::placeholder {
         background: url(/images/search.svg)
         no-repeat 30%;
+        background: none;
     }
 
     .searchBar {
@@ -110,6 +112,6 @@
     .searchBar::placeholder {
         color: black;
         font-size: 1em;
-        background: url('');
+        background: none;
     } 
 }
