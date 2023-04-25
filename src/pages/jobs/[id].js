@@ -46,9 +46,9 @@ export default function JobPost({ job }) {
               </div>
                 <div className={styles.tags}>
                     <p className={styles.tag}>#{job.contract_type}</p>
-                    <p className={styles.tag}>#{job.tag_one}</p>
-                    <p className={styles.tag}>#{job.tag_two}</p>
-                    <p className={styles.tag}>#{job.tag_three}</p>
+                    <p className={styles.tag}>{job.tag_one ? ('#' + job.tag_one) : ''}</p>
+                    <p className={styles.tag}>{job.tag_two ? ('#' + job.tag_two) : ''}</p>
+                    <p className={styles.tag}>{job.tag_three ? ('#' + job.tag_three) : ''}</p>
                 </div>
             </div>
             <div className={styles.sectionTwo}>
@@ -66,9 +66,9 @@ export default function JobPost({ job }) {
                 </p>
                 <div className={styles.moduleTags}>
                     <p className={styles.tag}>#{job.contract_type}</p>
-                    <p className={styles.tag}>#{job.tag_one}</p>
-                    <p className={styles.tag}>#{job.tag_two}</p>
-                    <p className={styles.tag}>#{job.tag_three}</p>
+                    <p className={styles.tag}>{job.tag_one ? ('#' + job.tag_one) : ''}</p>
+                    <p className={styles.tag}>{job.tag_two ? ('#' + job.tag_two) : ''}</p>
+                    <p className={styles.tag}>{job.tag_three ? ('#' + job.tag_three) : ''}</p>
                 </div>
                 <button className={styles.applyCTA} onClick={handleApplyClick}>Apply to job</button>
             </div>
