@@ -51,6 +51,7 @@
     padding: 0.7em 2.5em;
     cursor: pointer;
     border-radius: 2px;
+    margin-right: 2em;
 }
 
 .loginBtn:hover {
