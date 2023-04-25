@@ -1,7 +1,29 @@
-.container {
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
-    min-height: 400px;
+    min-height: 200px;
     background: url(/images/Milan.svg)
         no-repeat top;
         background-size: cover;
+    background-color: #f8f8f8;
+
+}
+
+.container {
+    max-width: 1400px;
+    margin: 3rem auto 3rem auto;
+    padding: 1em;
+}
+
+.Twitterlink {
+    color: var(--bgDark);
+    margin-right: 1em;
+    font-weight: 500;
+}
+
+.btn {
+    background-color: transparent;
+    cursor: pointer;
 }

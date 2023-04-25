@@ -62,7 +62,7 @@
 
 .companyName {
     font-size: 1em;
-    color: #2e2e2e;
+    color: black;
     font-weight: 500;
 }
 
@@ -182,6 +182,8 @@
 
     .jobTitle {
         font-size: 1em;
+        max-width: 150px;
+        font-weight: 700;
     }
 
     .companyName {
@@ -213,7 +215,7 @@
         padding-left: 0em;
         background-color: #ebebfc;
         color: #3900B1;
-        font-weight: 300;
+        font-weight: 500;
         padding: 0.2em 0.4em;
         border-radius: 2px;
     }

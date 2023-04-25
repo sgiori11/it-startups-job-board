@@ -39,18 +39,7 @@ useEffect(() => {
             alt="logo"
           />
         </Link>
-        <Link
-          className={styles.navLink + ' ' + utilStyles.headingL}
-          href="/about"
-        >
-          About
-        </Link>
-        <Link 
-          className={styles.navLink + ' ' + utilStyles.headingL}
-          href="/startups"
-        >
-          Startups
-        </Link>
+        
         {user ? (
           <Link 
             className={styles.navLink + ' ' + utilStyles.headingL + ' ' + styles.myAccount}

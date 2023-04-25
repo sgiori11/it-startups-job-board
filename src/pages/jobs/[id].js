@@ -24,7 +24,7 @@ export default function JobPost({ job }) {
             <div className={styles.logoContainer} 
                 style={{ position: 'relative', width: '200px', height: '200px'}}>
                 <Image fill
-                style={{ objectFit: "cover", width: '100%', height: '100%'}}
+                style={{ objectFit: "contain", width: '100%', height: '100%'}}
                 src={`https://hewqsbwtsubfefrjhlol.supabase.co/storage/v1/object/public/logos/${job.logo_url}`}
                 alt="logo"
                 />
