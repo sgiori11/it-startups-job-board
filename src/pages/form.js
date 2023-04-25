@@ -8,10 +8,12 @@ import FormStepThree from '@/components/FormStepThree';
 import Layout from '@/components/layout';
 import DOMPurify from 'dompurify';
 import { useUser } from '../context/user';
+import { useRouter } from 'next/router';
 
 
 export default function Form() {
     const { user } = useUser();
+    const { router } = useRouter;
     const [stepOneComplete, setStepOneComplete] = useState(false);
     const [stepTwoComplete, setStepTwoComplete] = useState(false);
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
@@ -173,7 +175,12 @@ export default function Form() {
       }));
     };
   
+    if (!user) {
+      console.log("no user found");
+      router.push('/');
+    }
     
+    if (user) {
     return(
     <div className={styles.formBody}>
       <Layout>
@@ -257,4 +264,5 @@ export default function Form() {
       </Layout>
     </div>
     )
+  }
 };
