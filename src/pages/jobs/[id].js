@@ -42,7 +42,7 @@ export default function JobPost({ job }) {
                 <h1 className={styles.jobTitle}>
                     {job.job_title}
                 </h1>
-                <div className={styles.dateInfoCont}>
+                <div className={styles.dateInfoCont}> 
                     <h2 className={styles.companyName}>
                         @ {job.company_name}
                     </h2>
