@@ -40,7 +40,13 @@ export default function Form() {
     const [errorMessage, setErrorMessage] = useState('');
  
    
-  
+    useEffect(() => {
+      //can only use router on client-side
+      if (!user) {
+        console.log("no user found for form page")
+        router.push('/');
+     }
+    }, [user]);
 
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -174,11 +180,6 @@ export default function Form() {
         [name]: value,
       }));
     };
-  
-    if (!user) {
-      console.log("no user found for form page")
-      router.push('/');
-    }
     
     if (user) {
     return(
