@@ -8,9 +8,11 @@ import { useUser } from "../context/user";
 const LoginPage = ({ showModal, setShowModal }) => {
     const { user } = useUser();
 
+
    function closeModal() {
      setShowModal(false);
    }
+
 
   if (!user) {
     return (
@@ -26,9 +28,9 @@ const LoginPage = ({ showModal, setShowModal }) => {
           <line x1="2.32593" y1="27.2588" x2="25.5847" y2="4" stroke="black" strokeWidth="3.87671" strokeLinecap="round"/>
           </svg>
         </button>
-        <p>Log in to post a job on Startup Finder!</p>
+        <p>Log in to post a job on Startup Jobs Italia!</p>
         <Auth
-        redirectTo="https://it-startups-job-board.vercel.app/"
+        redirectTo="https://startupjobsitalia.com/"
         appearance={{
           className: {
             anchor: styles.anchor,
