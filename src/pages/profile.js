@@ -45,6 +45,12 @@ export default function ProtectedAccountPage() {
   
 }
 
+async function signOutUser() {
+  console.log("sign out function invoked");
+  await supabase.auth.signOut();
+
+}
+
   if (!user) {
     return null;
   }
@@ -60,6 +66,7 @@ export default function ProtectedAccountPage() {
     <Layout>
     <div className={styles.pageWrap}>
       <header className={styles.header}>My Job Listings</header>
+      <button className={styles.signOut} onClick={signOutUser}>Sign out</button>
       <section className={styles.listingsContainer}>
         {userData.length === 0 ? (
             <p>No job listings found.</p>

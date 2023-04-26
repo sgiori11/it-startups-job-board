@@ -8,12 +8,12 @@ import FormStepThree from '@/components/FormStepThree';
 import Layout from '@/components/layout';
 import DOMPurify from 'dompurify';
 import { useUser } from '../context/user';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'; 
 
 
 export default function Form() {
     const { user } = useUser();
-    const { router } = useRouter;
+    const router = useRouter();
     const [stepOneComplete, setStepOneComplete] = useState(false);
     const [stepTwoComplete, setStepTwoComplete] = useState(false);
     const [stepThreeComplete, setStepThreeComplete] = useState(false);
@@ -176,7 +176,7 @@ export default function Form() {
     };
   
     if (!user) {
-      console.log("no user found");
+      console.log("no user found for form page")
       router.push('/');
     }
     

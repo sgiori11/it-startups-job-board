@@ -19,6 +19,15 @@
     max-width: 1000px;
 }
 
+.signOut {
+    background-color: var(--bgMedium);
+    padding: 0.7em 1.2em;
+    border-radius: 2px;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+}
+
 .listingsContainer {
     width: 100%;
     padding-top: 1em;

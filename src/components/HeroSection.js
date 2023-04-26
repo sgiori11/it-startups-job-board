@@ -9,19 +9,19 @@ import purpleBg from '../../public/images/purplebg.svg'
 import { useUser } from "../context/user";
 import { useState } from 'react'
 import { useRouter } from 'next/router';
-import LoginScreen from './LoginPage';
+import LoginScreen from './LoginPage'; 
 
 const HeroSection = () => {
 
   const [showModal, setShowModal] = useState();
-  const user  = useUser();
+  const { user } = useUser();
   const router = useRouter();
 
 
     const handlePostJob = () => {
       console.log('handlePostJob called');
       console.log('Function User:', user);
-        if (!user) {
+        if (!user || user == null) {
           setShowModal(true);
           } else {
           router.push('/form')
