@@ -94,6 +94,7 @@
     font-weight: 700;
     padding: 20px 40px;
     background-color: #EBC1FF;
+    cursor: pointer;
 }
 
 .heroSection .applyCTA {
