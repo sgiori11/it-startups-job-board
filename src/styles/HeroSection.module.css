@@ -237,6 +237,10 @@
         width: 140px;
         height: 50px;
     }
+
+    .primaryCTA::after {
+        font-size: 11px;
+    }
     
     .secondaryCTA {
         width: auto;
