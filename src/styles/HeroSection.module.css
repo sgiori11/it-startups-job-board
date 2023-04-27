@@ -34,6 +34,8 @@
 }
 
 .btnsContainer {
+    display: flex;
+    justify-content: center;
     margin-top: 3em;
 }
 
@@ -57,10 +59,12 @@
         border: 2px solid var(--bgDark);
         font-size: 1.1rem;
         font-weight: 500;
-        padding: 12px 45px;
+        padding: 12px 0px;
+        width: 180px;
         color: black;
         transition: 0.2s ease-in-out;
         border-radius: 2px;
+        display: block;
         ;
     }
     
@@ -97,6 +101,21 @@
         margin-right: 35px;
         transition: 0.2s ease-in-out;
         border-radius: 2px;
+        position: relative;
+    }
+
+    .primaryCTA::after {
+        display: flex;
+        justify-content: center;
+        content: "It's free to post!";
+        position: absolute;
+        color: #2d3748;
+        width: 100%;
+        bottom: -25px;
+        font-size: 13px;
+        font-weight: 500;
+
+
     }
     
     .primaryCTA:hover {
@@ -104,6 +123,10 @@
        color: var(--bgDark);
         
     }
+
+    
+
+  
 
 
 .uspContainer {
@@ -201,14 +224,16 @@
         width: auto;
         height: auto;
         font-size: 1em;
-        padding: 0.8em 1.9em;
+        width: 140px;
+        height: 50px;
     }
     
     .secondaryCTA {
         width: auto;
         height: auto;
         font-size: 1em;
-        padding: 0.8em 1.9em; 
+        width: 140px;
+        height: 50px;
     }
 
 

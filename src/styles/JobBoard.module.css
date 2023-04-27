@@ -57,9 +57,9 @@
 .searchBar::placeholder {
     color: black;
     font-size: 1.2em;
-    background: url(/images/search.svg)
+    /*background: url(/images/search.svg)
         no-repeat 38%;
-    background: none;
+    background: none; */
 }   
 
 .searchBar:focus::placeholder {
@@ -69,12 +69,12 @@
 
 
 @media only screen and (max-width: 875px) {
-    .searchBar::placeholder {
+    /*.searchBar::placeholder {
         background: url(/images/search.svg)
         no-repeat 30%;
         background: none;
     }
-
+*/
     .searchBar {
         width: 100vw;
     }

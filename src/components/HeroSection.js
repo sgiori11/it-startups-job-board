@@ -38,7 +38,7 @@ const HeroSection = () => {
             with <span className={styles.span}>IT</span> startups & founders
         </h1>
         <div className={styles.btnsContainer}>
-          <button className={styles.primaryCTA} onClick={handlePostJob}>Post a job</button>
+          <button className={styles.primaryCTA} onClick={handlePostJob}>Post a listing</button>
           <Link href="#jobBoard" className={styles.secondaryCTA}>Find a job</Link>
         </div>
        </div>
