@@ -30,7 +30,7 @@
 .topSection {
     text-align: center;
     max-width: 700px;
-    margin-top: 8em; 
+    margin-top: 7em; 
 }
 
 .btnsContainer {
@@ -109,12 +109,26 @@
         justify-content: center;
         content: "It's free to post!";
         position: absolute;
-        color: #2d3748;
+        color: #888888;
         width: 100%;
         bottom: -25px;
         font-size: 13px;
         font-weight: 500;
+        animation: fadeIn 2s;
 
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
 
     }
     
@@ -123,10 +137,6 @@
        color: var(--bgDark);
         
     }
-
-    
-
-  
 
 
 .uspContainer {
