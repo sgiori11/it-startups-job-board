@@ -8,12 +8,34 @@ import Head from 'next/head';
 
 export default function JobPost({ job }) {
 
+  function formatDate(timestamp) {
+    const currentDate = new Date();
+    const date = new Date(timestamp);
+
+    const diffInDays = Math.floor((currentDate - date) / (1000 * 60 * 60 * 24));
+    let formattedDate;
+
+    if (diffInDays === 0) {
+      formattedDate = 'today';
+    } else if (diffInDays === 1) {
+      formattedDate = 'yesterday';
+    } else {
+      const options = { month: 'short', day: 'numeric' };
+      formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+    }
+
+    return formattedDate;
+  }
+
+  const timestamp = job.created_at;
+  const formattedDate = formatDate(timestamp);
+
+
   const handleApplyClick = () => {
-    console.log("apply button clicked")
+
     if (job.apply_link.startsWith('http://') || job.apply_link.startsWith('https://')) {
       window.open(job.apply_link, '_blank');
     } else if (job.apply_link.includes('@')) {
-      console.log("it's an email")
       window.location.href = `mailto:${job.apply_link}`;
     }
   };
@@ -46,8 +68,8 @@ export default function JobPost({ job }) {
                     <h2 className={styles.companyName}>
                         @ {job.company_name}
                     </h2>
-                    <p className={styles.postedOn}>
-                        {job.created_at}
+                    <p className={styles.postedOn}>Posted&nbsp; 
+                        {formattedDate}
                     </p>
                 </div>
               </div>

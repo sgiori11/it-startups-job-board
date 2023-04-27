@@ -3,6 +3,30 @@ import Image from 'next/image'
 //import testImg from '../../public/images/logo.svg'
 
 const JobContainer = ({ job }) => {
+
+    function formatDate(timestamp) {
+        const currentDate = new Date();
+        const date = new Date(timestamp);
+    
+        const diffInDays = Math.floor((currentDate - date) / (1000 * 60 * 60 * 24));
+        let formattedDate;
+    
+        if (diffInDays === 0) {
+          formattedDate = 'Today';
+        } else if (diffInDays === 1) {
+          formattedDate = 'Yesterday';
+        } else {
+          const options = { month: 'short', day: 'numeric' };
+          formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+        }
+    
+        return formattedDate;
+      }
+    
+      const timestamp = job.created_at;
+      const formattedDate = formatDate(timestamp);
+    
+      
     
     return (
         <div className={styles.container}>
@@ -25,7 +49,7 @@ const JobContainer = ({ job }) => {
                         @ {job.company_name}
                     </h4>
                     <p className={styles.postedOn}>
-                        {job.created_at}
+                        {formattedDate}
                     </p>
                 </div>
                 <p className={styles.jobDesc}>

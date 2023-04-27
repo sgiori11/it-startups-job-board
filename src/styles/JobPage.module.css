@@ -31,6 +31,7 @@
 }
 
 .dateInfoCont {
+    margin-top: 1em;
     display: flex;
     align-items: center;
 }
@@ -43,7 +44,7 @@
 .postedOn {
     color: #7c7c81;
     font-size: 0.9em;
-    margin-left: 5em;
+    margin-left: 3em;
 }
 
 .tags {
