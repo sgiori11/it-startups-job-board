@@ -107,7 +107,7 @@
     .primaryCTA::after {
         display: flex;
         justify-content: center;
-        content: "It's free to post!";
+        content: "Free. No card required.";
         position: absolute;
         color: #888888;
         width: 100%;
