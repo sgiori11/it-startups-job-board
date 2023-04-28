@@ -33,7 +33,7 @@ return (
         <form onSubmit={(e) => handleSearch(e)}>
           <input 
             className={styles.searchBar}
-            type="search" 
+            //type="search" 
             id="site-search" 
             name="q"
             placeholder="Search startup jobs" />
