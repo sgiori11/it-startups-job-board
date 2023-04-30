@@ -28,8 +28,7 @@
 
 .container {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     max-width: 1400px;
     margin: 3rem auto 3rem auto;
     margin: 2em;
@@ -38,9 +37,14 @@
     width: 100%;
 }
 
+.content {
+    display: flex;
+}
+
 .Twitterlink {
     color: var(--bgDark);
     font-weight: 500;
+    margin-right: 1.2em;
 }
 
 .Twitterlink:hover {
@@ -48,7 +52,6 @@
 }
 
 .privacy {
-    margin-top: 0.5em;
     color: #2d3748;
 }
 

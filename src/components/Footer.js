@@ -7,11 +7,13 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <p>Built in Milan by 
-                    <Link href="https://twitter.com/sgiori8" className={styles.Twitterlink}> Steph</Link>
-                </p>
-                <Link className={styles.privacy} href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
-            </div>
+                <div className={styles.content}>
+                  <p>Built in Milan by 
+                     <Link href="https://twitter.com/sgiori8" className={styles.Twitterlink}> Steph</Link>
+                  </p>
+                  <Link className={styles.privacy} href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
+                </div>
+             </div>
         </footer>
     )
 };
