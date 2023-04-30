@@ -11,7 +11,7 @@ export default function Footer() {
                   <p>Built in Milan by 
                      <Link href="https://twitter.com/sgiori8" className={styles.Twitterlink}> Steph</Link>
                   </p>
-                  <Link className={styles.privacy} href="/public/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
+                  <Link className={styles.privacy} href="/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</Link>
                 </div>
              </div>
         </footer>
