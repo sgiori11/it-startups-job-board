@@ -8,7 +8,7 @@ export default function Privacy() {
         <title>Privacy Policy</title>
       </Head>
       <div>
-        <iframe src="/privacy.html" className={styles.iframe}></iframe>
+        <iframe src="privacy.html" className={styles.iframe}></iframe>
       </div>
     </>
   );
