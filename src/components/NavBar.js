@@ -11,8 +11,6 @@ import { useUser } from "../context/user";
 
 
 export default function NavBar() {
- // const user = useUser()
- // const [isLoggedIn, setIsLoggedIn] = useState(!!user);
   const [showModal, setShowModal] = useState(false);
   const { user } = useUser();
 

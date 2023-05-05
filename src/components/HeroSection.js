@@ -19,13 +19,10 @@ const HeroSection = () => {
 
 
     const handlePostJob = () => {
-      console.log('handlePostJob called');
-      console.log('Function User:', user);
         if (!user || user == null) {
           setShowModal(true);
           } else {
           router.push('/form')
-          console.log('Router push called');
           setShowModal(false);
         }
     };

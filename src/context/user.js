@@ -14,8 +14,6 @@ const Provider = ({ children }) => {
             const { data: { session: activeSession }} = await supabase.auth.getSession();
             setSession(activeSession);
             setUser(activeSession?.user ?? null);
-            console.log("user", user);
-            console.log("session", session);
         }
         getActiveSession();
 
