@@ -9,6 +9,7 @@ import Layout from '@/components/layout';
 import DOMPurify from 'dompurify';
 import { useUser } from '../context/user';
 import { useRouter } from 'next/router'; 
+import Head from 'next/head'
 
 
 export default function Form() {

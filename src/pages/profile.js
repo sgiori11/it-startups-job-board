@@ -3,6 +3,7 @@ import { supabase } from '../lib/supabaseClient';
 import jobStyles from '../styles/JobBoard.module.css';
 import JobContainer from '@/components/JobContainer';
 import Link from 'next/link';
+import Head from 'next/head'
 import Layout from '@/components/layout';
 import styles from '../styles/Profile.module.css';
 import { useUser } from '../context/user';
