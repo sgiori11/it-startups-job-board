@@ -194,7 +194,7 @@ export default function Form() {
         <div className={styles.formContainer}>
             <h1 className={utilStyles.headingXl}
                 style={{textAlign: 'center'}}
-            >Post a Job on Startup Finder</h1>
+            >Post a Job on Startup Jobs Italia</h1>
             <p className={utilStyles.subheading}>{step}</p>
             <div className={styles.progressBarContainer}>
                 <div className={
