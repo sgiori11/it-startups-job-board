@@ -44,10 +44,9 @@ export default function JobPost({ job }) {
    <section className={styles.pageContainer}>
     <Layout>
      <Head>
-        <title>Italian Startup Jobs</title>
-        <meta name="description" content="" />
+        <title>{job.job_title} at {job.company_name} - Startup Jobs Italia</title>
+        <meta name="description" content={`${job.job_title} job opportunity at ${job.company_name}. ${job.summary}`} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="" />
      </Head>
         <section className={styles.heroSection}>
             <div className={styles.logoContainer} 

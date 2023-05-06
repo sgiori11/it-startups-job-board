@@ -64,6 +64,11 @@ async function signOutUser() {
   return (
    <div className={styles.pageBody}>
     <Layout>
+       <Head>
+        <title>My account - Startup Jobs Italia</title>
+        <meta name="description" content="Manage your listings and bookmarked jobs." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
     <div className={styles.pageWrap}>
       <header className={styles.header}>My Job Listings</header>
       <button className={styles.signOut} onClick={signOutUser}>Sign out</button>

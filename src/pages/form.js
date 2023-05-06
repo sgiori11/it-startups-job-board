@@ -185,6 +185,11 @@ export default function Form() {
     return(
     <div className={styles.formBody}>
       <Layout>
+        <Head>
+          <title>Post a listing - Startup Jobs Italia</title>
+          <meta name="description" content="Create and submit a new job listing to Startup Jobs Italia to connect with the local talent pool." />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
         <div className={styles.formContainer}>
             <h1 className={utilStyles.headingXl}
                 style={{textAlign: 'center'}}

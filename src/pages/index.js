@@ -11,9 +11,8 @@ export default function Home({ jobs }) {
     <Layout>
       <Head>
         <title>Italian Startup Jobs</title>
-        <meta name="description" content="" />
+        <meta name="description" content="We match Italian startups and founders with Italian talent. Post a listing for free!" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="" />
       </Head>
       <HeroSection />
       <Auth />
