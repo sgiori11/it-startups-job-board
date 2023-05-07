@@ -173,6 +173,10 @@
         overflow: hidden;
     }
 
+    .previewContainer > .logoContainer {
+        display: none;
+    }
+
 
     .jobTitle {
         font-size: 1em;
