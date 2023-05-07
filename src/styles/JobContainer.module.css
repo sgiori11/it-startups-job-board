@@ -27,6 +27,7 @@
 }
 
 .previewContainer {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -173,10 +174,10 @@
         overflow: hidden;
     }
 
-    .previewContainer > .logoContainer {
+    /*.previewContainer > .logoContainer {
         display: none;
     }
-
+*/
 
     .jobTitle {
         font-size: 1em;
@@ -233,6 +234,7 @@
     }
 
     .tags {
+        
         width: 100%;
         display: flex;
         flex-wrap: wrap;
