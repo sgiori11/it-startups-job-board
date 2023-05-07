@@ -11,7 +11,7 @@ const JobPreviewContainer = ({ jobTitle, companyName, contractType, location, jo
             style={{ position: 'relative', width: '150px', height: '150px'}}>
                 <Image fill
                 src={companyLogo ? companyLogo : noImg}
-                style={{ objectFit: 'contain'}}
+                style={{ objectFit: 'contain', width: '100%', height: '100%'}}
                 alt="logo"
                 />
              </div>
@@ -33,7 +33,7 @@ const JobPreviewContainer = ({ jobTitle, companyName, contractType, location, jo
                     <p className={styles.tag}>{tags.tag3 ? ('#' + tags.tag3) : ''}</p>
                 </div>
             </div>
-        </div>
+        </div> 
     )
 };
 
