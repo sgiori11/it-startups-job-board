@@ -30,7 +30,7 @@ const LoginPage = ({ showModal, setShowModal }) => {
         </button>
         <p>Log in to post a job on Startup Jobs Italia!</p>
         <Auth
-        redirectTo="https://startupjobsitalia.com/"
+        redirectTo="http://localhost:3000/"
         appearance={{
           className: {
             anchor: styles.anchor,
