@@ -8,10 +8,10 @@ const JobPreviewContainer = ({ jobTitle, companyName, contractType, location, jo
     return (
         <div className={styles.previewContainer}>
             <div className={styles.logoContainer} 
-            style={{ position: 'relative'}}>
+            style={{ position: 'relative', width: '150px', height: '150px'}}>
                 <Image fill
                 src={companyLogo ? companyLogo : noImg}
-                style={{ objectFit: 'contain', width: '100%', height: '100%'}}
+                style={{ objectFit: 'contain'}}
                 alt="logo"
                 />
              </div>
