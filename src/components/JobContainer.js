@@ -26,7 +26,7 @@ const JobContainer = ({ job }) => {
       const timestamp = job.created_at;
       const formattedDate = formatDate(timestamp);
     
-      
+       
     
     return (
         <div className={styles.container}>
