@@ -107,53 +107,43 @@ export default function JobPost({ job }) {
 
 
 export async function getStaticPaths() {
-  let { data } = await supabase.from('jobs').select('id, job_title, company_name');
+  // Return a list of possible value for id and slug
+  let { data } = await supabase
+    .from('jobs')
+    .select('id');
 
   let paths = data.map((job) => ({
-    params: {
-      slug: `${encodeURIComponent(job.job_title)}-${encodeURIComponent(job.company_name)}-${job.id}`,
-    },
+      params: {
+          slug: job.job_title,
+          id: job.id.toString(), 
+      },
   }));
 
   return {
-    paths,
-    fallback: 'blocking',
+      paths,
+      fallback: 'blocking',
   };
 }
 
 
-export async function getStaticProps({ params }) {
-  const jobIdRegex = /-(\d+)$/;
-  const jobIdMatch = params.slug.match(jobIdRegex);
-
-  if (!jobIdMatch) {
-    return {
-      notFound: true,
-    };
-  }
-
-  const jobId = jobIdMatch[1];
-
-  let { data, error } = await supabase
-    .from('jobs')
-    .select('*')
-    .filter('id', 'eq', jobId)
-    .single();
-
-  if (error) {
-    console.error(error);
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      job: data,
-    },
-  };
-}
-
-
-
-
+    export async function getStaticProps({ params }) {
+        // Fetch necessary data for the post using params.id
+        let { data, error } = await supabase
+          .from('jobs')
+          .select('*')
+          .eq('id', params.id)
+          .single();
+      
+        if (error) {
+          console.error(error);
+          return {
+            notFound: true,
+          };
+        }
+      
+        return {
+          props: {
+            job: data,
+          },
+        };
+      }
