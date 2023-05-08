@@ -174,10 +174,10 @@
         overflow: hidden;
     }
 
-    /*.previewContainer > .logoContainer {
-        display: none;
+    .previewContainer  {
+        height: 130px;
     }
-*/
+
 
     .jobTitle {
         font-size: 1em;
