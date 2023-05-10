@@ -180,7 +180,7 @@
 .label {
     display: block;
     margin-bottom: 8px;
-    font-size: 1.06em;
+    font-size: 1.06em; 
 }
 
 .input[type="text"], .textArea, .jobDescription {
@@ -203,6 +203,8 @@
     overflow-y: auto;
     width: 100%;
   }
+
+
 
 .quillEditor {
     height: 500px;
