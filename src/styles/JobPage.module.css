@@ -1,6 +1,4 @@
-.pageContainer {
-   
-}
+
 
 .heroSection {
     display: flex;
@@ -320,6 +318,10 @@
     
     .companyName {
         font-size: 1.2em;
+    }
+
+    .postedOn {
+        margin-left: 30px;
     }
 
     .tag {

@@ -229,6 +229,10 @@
         display: none;
     }
 
+    .uspsBg {
+        display: none;
+    }
+
     .heroContainer {
         display: flex;
         justify-content: center;
