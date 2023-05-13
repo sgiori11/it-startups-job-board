@@ -98,7 +98,6 @@
       }  
 
     .searchBar {
-        display:none;
         margin-bottom: 1em;
         position: flex;
         text-align: center;
@@ -108,6 +107,7 @@
         margin-left: 1em;
         border: 1px solid var(--bgDark);
         border-radius: 2px;
+        overflow: hidden;
     }
 
     .searchBar::placeholder {
