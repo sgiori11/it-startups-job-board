@@ -76,7 +76,12 @@
     }
 */
     .searchBar {
-        width: 100vw;
+        width: 100%;
+    }
+
+    .searchBarCont {
+        width: 100%;
+        overflow: hidden;
     }
 }
 
@@ -102,15 +107,8 @@
         position: flex;
         text-align: center;
         height: 60px;
-        width: 92vw;
-        margin-right: 1em;
-        margin-left: 1em;
         border: 1px solid var(--bgDark);
         border-radius: 2px;
-    }
-
-    .searchBarCont {
-        overflow: hidden;
     }
 
     .searchBar::placeholder {
@@ -118,4 +116,6 @@
         font-size: 1em;
         background: none;
     } 
+
+    
 }
