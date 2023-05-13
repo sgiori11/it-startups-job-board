@@ -30,7 +30,7 @@ return (
     <div id="jobBoard" className={styles.jobBoard}>
       <div className={styles.jobBoardContainer}>
         <h2 className={styles.h2}>Find your next role</h2>
-        <form onSubmit={(e) => handleSearch(e)}>
+        <form className={styles.searchBarCont} onSubmit={(e) => handleSearch(e)}>
           <input 
             className={styles.searchBar}
             //type="search" 

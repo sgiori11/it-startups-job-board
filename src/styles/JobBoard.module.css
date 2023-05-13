@@ -107,6 +107,9 @@
         margin-left: 1em;
         border: 1px solid var(--bgDark);
         border-radius: 2px;
+    }
+
+    .searchBarCont {
         overflow: hidden;
     }
 
