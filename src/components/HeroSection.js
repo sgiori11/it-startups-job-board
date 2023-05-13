@@ -24,7 +24,7 @@ const HeroSection = () => {
           } else {
           router.push('/form')
           setShowModal(false);
-        }
+        } 
     };
 
     return (

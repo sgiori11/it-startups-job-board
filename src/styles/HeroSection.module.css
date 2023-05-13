@@ -4,8 +4,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 80vh;
+    /*height: 80vh;*/
     overflow: visible;
+
 }
 
 .headingOne {
@@ -142,6 +143,7 @@
 .uspContainer {
     width: 100%;
     max-width: 1200px;
+    margin-top: 10em;
 }
 
 .uspContainer > p {
