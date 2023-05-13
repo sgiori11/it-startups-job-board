@@ -3,7 +3,7 @@
    display: flex;
    justify-content: center;
 }
-
+ 
 .jobBoardContainer {
     display: flex;
     justify-content: center;
@@ -98,6 +98,7 @@
       }  
 
     .searchBar {
+        display:none;
         margin-bottom: 1em;
         position: flex;
         text-align: center;
