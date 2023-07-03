@@ -5,7 +5,7 @@ import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
 import Image from 'next/image';
 import Link from 'next/link';
-import purpleBg from '../../public/images/purplebg.svg'
+import purpleBg from '../../public/images/purplebg.png'
 import { useUser } from "../context/user";
 import { useState } from 'react'
 import { useRouter } from 'next/router';
@@ -24,7 +24,7 @@ const HeroSection = () => {
           } else {
           router.push('/form')
           setShowModal(false);
-        } 
+        }  
     };
 
     return (
