@@ -21,8 +21,15 @@ export default function Home({ jobs }) {
   )};
 
 export async function getServerSideProps() {
-  let { data } = await supabase.from('jobs').select();
+  let { data, error } = await supabase
+    .from('jobs')
+    .select()
+    .order('created_at', { ascending: false }); // sort by most recent
   
+  if (error) {
+      console.error("Error fetching jobs: ", error);
+      return { props: { jobs: [] } };
+   }
    
   return {
     props: {

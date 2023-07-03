@@ -13,7 +13,11 @@ const [searchResults, setSearchResults] = useState([]);
 const handleSearch = async (e) => {
   e.preventDefault();
   const query = e.target.elements.q.value;
-  const { data, error } = await supabase.from('jobs').select().textSearch('fts', query, {
+  const { data, error } = await supabase
+    .from('jobs')
+    .select()
+    .order('created_at', { ascending: false }) // sort by most recent
+    .textSearch('fts', query, {
     type: 'websearch',
   });
 
