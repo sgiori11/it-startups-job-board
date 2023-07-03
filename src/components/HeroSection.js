@@ -67,7 +67,7 @@ const HeroSection = () => {
         </section>
         <Image 
           priority
-          alt='faded purple SVG background'
+          alt='faded purple PNG background'
           src={purpleBg}
           className={styles.uspsBg}
         />
