@@ -31,7 +31,7 @@ const HeroSection = () => {
       <section className={styles.heroContainer + ' ' + styles.landingImg}>
         <div className={styles.topSection}>
         <h1 className={utilStyles.heading2Xl + ' ' + styles.headingOne}>
-            We match <span className={styles.span}>IT</span> talent 
+            We match <span className={styles.span}>IT</span> talent
             with <span className={styles.span}>IT</span> startups & founders
         </h1>
         <div className={styles.btnsContainer}>

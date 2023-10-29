@@ -57,6 +57,7 @@ useEffect(() => {
           <LoginPage showModal={showModal} setShowModal={setShowModal} />
         )}
         </div>
+        <Link href="/blog">Blog</Link>
       </nav>
     );
   };
