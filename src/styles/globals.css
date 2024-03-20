@@ -1,6 +1,7 @@
 
 html {
     scroll-behavior: smooth !important;
+    -webkit-font-smoothing: antialiased;
 }
 
 
@@ -22,13 +23,14 @@ html {
 }
 
 * {
-        font-family: 'Manrope', sans-serif;
         box-sizing: border-box;
         margin: 0;
         padding: 0;
         border: 0;
         font-size: 100%;
         vertical-align: baseline;
+        font-family: var(--font-dm-sans);
+        font-weight: 400;
   }
 
   a {

@@ -28,49 +28,23 @@ const HeroSection = () => {
     };
 
     return (
-      <section className={styles.heroContainer + ' ' + styles.landingImg}>
+      <section className={styles.heroContainer}>
         <div className={styles.topSection}>
         <h1 className={utilStyles.heading2Xl + ' ' + styles.headingOne}>
-            We match <span className={styles.span}>IT</span> talent 
-            with <span className={styles.span}>IT</span> startups & founders
+        A Hub for Italian Startup Opportunities<span className={styles.span}>.</span> 
         </h1>
+        <h2 className={styles.h2}>Find your next co-founder, programmer, or inspiring project.</h2>
         <div className={styles.btnsContainer}>
-          <button className={styles.primaryCTA} onClick={handlePostJob}>Post a listing</button>
-          <Link href="#jobBoard" className={styles.secondaryCTA}>Find a job</Link>
+          <button className={styles.primaryCTA} onClick={handlePostJob}>Post a Role</button>
+          <Link href="#jobBoard" className={styles.secondaryCTA}>View Openings</Link>
         </div>
        </div>
-        
-        <section className={styles.uspContainer}>
-        <p style={{textAlign: 'center', fontWeight: '500', marginBottom: 30}}>
-            What you can look forward to as a startup employee in Italy:
-        </p>
-          <div className={styles.uspSection}>
-           <div className={styles.USPs}>
-            <p>
-            New and returning residents are eligible for a 70% tax break via
-            “Rientro dei cervelli” dell’art. 5 del D.L. n. 34/2019
-            </p>
-           </div>
-           <div className={styles.USPs}>
-            <p>
-            58 Unesco World Heritage sites and up to 300 🌞 days per year. 
-            Remote work has never looked so good!
-            </p>
-           </div>
-           <div className={styles.USPs}>
-            <p>
-            A budget of €200M 💸allocated to Italian startups, 
-            backed by the Ministry of Economic Development. 
-            </p>
-           </div>
-          </div>
-        </section>
-        <Image 
-          priority
-          alt='faded purple PNG background'
-          src={purpleBg}
-          className={styles.uspsBg}
-        />
+       <section className={styles.heroElements}>
+          <div></div>
+          <div></div>
+          <div></div>
+          hello
+      </section>
         {showModal && (
           <LoginScreen showModal={showModal} setShowModal={setShowModal} />
         )}
