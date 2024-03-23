@@ -1,22 +1,25 @@
 .container {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 180px;
+    display: grid;
+    grid-template-areas: 
+    "logo about"
+    ". tags";
+    grid-template-columns: auto 1fr;
+    column-gap: 1.2rem;
     background-color: white;
     margin: 0.5em 0;
-    padding: 1em;
-    min-width: 100%;
+    padding: 1rem;
     border: 1px solid #A994FF;
-    -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
-    box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
-    border-radius: 16px;
+   -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.15);
+    box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.15);
+    border-radius: 12px;
 }
 
-.logoContainer img {
-    border-radius: 5px;
-    border: 1px solid blue;
+.logoContainer {
+    grid-area: logo;
+    border-radius: 6px;
+    border: 1px solid #dfd7ff;
+    overflow: hidden;
 }
 
 .container:hover {
@@ -24,7 +27,6 @@
     transform: translateY(3px);
     transition: transform 0.1s ease;
     cursor: pointer;
-   
 }
 
 .previewContainer {
@@ -48,24 +50,18 @@
 }
 
 .sectionOne {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex: 1;
-    height: 100%;
-    margin: 0.5em 1.5em 0 1.5em;
-    border: 1px solid pink;
+    grid-area: about;
 }
 
 .jobTitle {
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
     font-weight: 800;
     color: #202020;
 }
 
 .companyName {
-    font-size: 1em;
+    font-size: 1rem;
     color: #757575;
     font-weight: 500;
 }
@@ -76,73 +72,39 @@
 }
 
 .postedOn {
-    color: #9c9c9f;
+    color: #757575;
     font-size: 0.8em;
-    margin-left: 1.8em;
+    margin-left: 1.8rem;
 }
 
 .jobDesc {
    text-align: left;
-   margin-top: 1em;
-   font-size: 0.9em;
-   max-width: 500px;
-   font-weight: 300;
+   margin-top: 0.6rem;
+   font-size: 0.9rem;
+   max-width: 400px;
    color: #757575;
 }
 
 .sectionTwo {
+    grid-area: tags;
+}
+
+
+.tags {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0.5em;
-    height: 100%;
-    width: 150px;
-}
-
-
-.jobLoc {
-    position: relative;
-    font-size: 1em;
-    margin-bottom: 0.9em;
-    padding-left: 1.4em;
-    font-weight: 500;
-}
-
-.jobLoc::before {
-    content: " ";
-    background: url(/images/location.svg)
-      no-repeat center;
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 1em;
-    height: 1.3em;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .tag {
-    margin-bottom: 0.3em;
-    text-align: left;
-    font-size: 0.95em;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.6rem;
+    color: #2A3647;
+    background-color: #E5F4FB;
+    padding: 0.2rem 1rem;
+    border-radius: 12px;
 }
-
-.tag:nth-of-type(1) {
-    color: #CE2E7B;
-  }
-  
-  .tag:nth-of-type(2) {
-   /* color: #2760B6; */
-    color: #411F88;
-  }
-  
-  .tag:nth-of-type(3) {
-    /*color: #0D8119; */
-    color: #411F88;
-  }
-  
-  .tag:nth-of-type(4) {
-    /* color: #A01569; */
-    color: #411F88;
-  }
 
   @media only screen and (max-width: 680px) {
 

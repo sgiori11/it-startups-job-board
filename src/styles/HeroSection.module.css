@@ -2,55 +2,71 @@
     position: relative;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 80vh;
-    border: 1px solid blue;
+   
 }
 
 .heroElements {
-    position: relative;
-    border: 1px solid purple;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+  
     height: 100%;
-    min-width: 50vw;
 }
-
-.heroElements div:nth-of-type(1) {
+  
+  /* Using ::before and ::after for gradient backgrounds */
+  .heroContainer::before,
+  .heroContainer::after {
+    content: '';
     position: absolute;
+    border-radius: inherit; /* Optional, if you want rounded corners */
+    z-index: -1; /* Places the gradients behind the content */
+  }
+  
+  .heroContainer::before {
+    /* First gradient */
     top: 0;
     right: 0; /* Adjusted to be at the top-right */
+    background: radial-gradient(50% 35.62% at 50% 50%, rgba(203, 179, 255, 0.58) 33.29%, rgba(255, 255, 255, 0) 80.87%);
     width: 1000px;
     height: 1000px;
-    background: radial-gradient(50% 35.62% at 50% 50%, rgba(203, 179, 255, 0.58) 33.29%, rgba(255, 255, 255, 0) 80.87%);
-}
-
-.heroElements div:nth-of-type(2) {
-    position: absolute;
-    top: 10vh; /* Slightly lower than the first gradient */
+  }
+  
+  .heroContainer::after {
+    /* Second gradient */
+    background: radial-gradient(50% 33.17% at 50% 50%, #F4C8FF 32.28%, rgba(255, 255, 255, 0) 100%);
+    top: 20vh; /* Slightly lower than the first gradient */
     right: -350px; /* Half of the width to move it to the center */
     width: 700px;
     height: 700px;
-    background: radial-gradient(50% 33.17% at 50% 50%, #F4C8FF 32.28%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-}
-
-
-.heroElements div:nth-of-type(3) {
+    right: -350px; /* Center the gradient horizontally */
+  }
+  
+  /* Additional gradient if needed */
+  .heroContainer .additionalBackground {
     position: absolute;
-    bottom: 0;
-    left: 0; /* Positioned at the bottom-left */
+    top: 0;
+    right: 0; /* Positioned at the bottom-left */
     width: 700px;
     height: 700px;
-    background: radial-gradient(50% 35.62% at 50% 50%, rgba(255, 243, 200, 0.84) 32.28%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-
-}
+    background: radial-gradient(50% 35.62% at 50% 50%, rgba(255, 243, 200, 0.84) 32.28%, rgba(255, 255, 255, 0) 100%);
+    z-index: -1; /* Behind the ::before and ::after elements */
+  }
+  
+  /* Rest of the styles unchanged ... */
+  
 
 .topSection {
     margin-top: 7em; 
-    border: 1px solid red;
+  
     max-width: 450px !important;
 }
 
+.topSection p {
+    text-align: left;
+    color: #757575;
+}
 
 
 .headingOne {
@@ -95,10 +111,10 @@
         vertical-align: baseline;
         background-color: white;
         border: 2px solid #0B0909;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         font-weight: 500;
         padding: 12px 0px;
-        width: 200px;
+        width: 180px;
         color: #0B0909;
         transition: 0.2s ease-in-out;
         border-radius: 6px;
@@ -131,10 +147,10 @@
         text-decoration: none;
         vertical-align: baseline;
         background-color: #3900B1;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         border: 2px solid #3900B1;
         padding: 12px 0px;
-        width: 200px;
+        width: 180px;
         color: white;
         margin-right: 1rem;
         transition: 0.2s ease-in-out;
@@ -147,7 +163,7 @@
         justify-content: center;
         content: "Free. No card required.";
         position: absolute;
-        color: #888888;
+        color: #757575;
         width: 100%;
         bottom: -25px;
         font-size: 13px;
@@ -175,6 +191,109 @@
        color: var(--bgDark);
         
     }
+
+    .jobcontainer {
+        position: relative;
+        display: grid;
+        grid-template-areas: 
+        "logo about"
+        ". tags";
+        grid-template-columns: auto 1fr;
+        column-gap: 1.2rem;
+        background-color: rgba(255, 255, 255, 0.6);
+        margin: 0.5em 0;
+        padding: 1rem;
+        border: 1px solid #A994FF;
+        border-radius: 12px;
+        box-shadow: 0px 4.9434px 7.78585px rgba(105, 105, 105, 0.11);
+    }
+
+    .heroElements .jobcontainer:nth-of-type(1) {
+        transform: rotate(4deg);
+    }
+
+    .heroElements .jobcontainer:nth-of-type(2) {
+        transform: translateX(-100px);
+    }
+    
+
+    .heroElements .jobcontainer:nth-of-type(3) {
+        transform: rotate(4deg);
+    }
+
+    .joblogoContainer {
+        grid-area: logo;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    
+    .jobcontainer:hover {
+        box-shadow: none;
+        transform: translateY(3px);
+        transition: transform 0.1s ease;
+        cursor: pointer;
+    }
+    
+    .jobcompanyLogo {
+        height: 100%;
+    }
+    
+    .jobsectionOne {
+        grid-area: about;
+    }
+    
+    .jobjobTitle {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+        font-weight: 800;
+        color: #202020;
+    }
+    
+    .jobcompanyName {
+        font-size: 1rem;
+        color: #757575;
+        font-weight: 500;
+    }
+    
+    .jobdateInfoCont {
+        display: flex;
+        align-items: center;
+    }
+    
+    .jobpostedOn {
+        color: #757575;
+        font-size: 0.8em;
+        margin-left: 1.8rem;
+    }
+    
+    .jobjobDesc {
+       text-align: left;
+       margin-top: 0.6rem;
+       font-size: 0.9rem;
+       max-width: 300px;
+       color: #757575;
+    }
+    
+    .jobsectionTwo {
+        grid-area: tags;
+    }
+    
+    .jobtags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .jobtag {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        color: #2A3647;
+        background-color: #E5F4FB;
+        padding: 0.2rem 1rem;
+        border-radius: 12px;
+    }
+    
 
 
 
