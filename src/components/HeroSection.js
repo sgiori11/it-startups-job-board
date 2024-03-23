@@ -31,7 +31,7 @@ const HeroSection = () => {
 
     return (
       <section className={styles.heroContainer}>
-        <div className={styles.additionalBackground}></div>
+       
         <div className={styles.topSection}>
         <p>🌎 &nbsp;&nbsp;Build something sustainable. Change the world.</p>
         <h1 className={utilStyles.heading2Xl + ' ' + styles.headingOne}>

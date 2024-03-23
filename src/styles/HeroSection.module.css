@@ -1,20 +1,19 @@
 .heroContainer {
     position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
-    height: 80vh;
-   
+    min-height: 60vh;
 }
 
 .heroElements {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-  
     height: 100%;
 }
   
+
   /* Using ::before and ::after for gradient backgrounds */
   .heroContainer::before,
   .heroContainer::after {
@@ -34,32 +33,18 @@
   }
   
   .heroContainer::after {
-    /* Second gradient */
-    background: radial-gradient(50% 33.17% at 50% 50%, #F4C8FF 32.28%, rgba(255, 255, 255, 0) 100%);
-    top: 20vh; /* Slightly lower than the first gradient */
-    right: -350px; /* Half of the width to move it to the center */
-    width: 700px;
-    height: 700px;
-    right: -350px; /* Center the gradient horizontally */
+   position: absolute;
+   top: 0;
+   right: 0; /* Positioned at the bottom-left */
+   width: 700px;
+   height: 700px;
+   background: radial-gradient(50% 35.62% at 50% 50%, rgba(255, 243, 200, 0.84) 32.28%, rgba(255, 255, 255, 0) 100%);
+   z-index: -1; /* Behind the ::before and ::after elements */
   }
   
-  /* Additional gradient if needed */
-  .heroContainer .additionalBackground {
-    position: absolute;
-    top: 0;
-    right: 0; /* Positioned at the bottom-left */
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(50% 35.62% at 50% 50%, rgba(255, 243, 200, 0.84) 32.28%, rgba(255, 255, 255, 0) 100%);
-    z-index: -1; /* Behind the ::before and ::after elements */
-  }
-  
-  /* Rest of the styles unchanged ... */
   
 
 .topSection {
-    margin-top: 7em; 
-  
     max-width: 450px !important;
 }
 
@@ -201,7 +186,7 @@
         grid-template-columns: auto 1fr;
         column-gap: 1.2rem;
         background-color: rgba(255, 255, 255, 0.6);
-        margin: 0.5em 0;
+        margin: 1rem 0;
         padding: 1rem;
         border: 1px solid #A994FF;
         border-radius: 12px;
