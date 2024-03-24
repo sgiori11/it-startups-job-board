@@ -91,7 +91,7 @@ const HeroSection = () => {
           </h4>
       </div>
       <p className={styles.jobjobDesc}>
-      I’m looking for a technologist to help scale a prototype I’ve built in Bubble that...
+      I&apos;m looking for a technologist to help scale a prototype I&apos;ve built in Bubble that...
       </p>
       </div>
       <div className={styles.jobsectionTwo}>
