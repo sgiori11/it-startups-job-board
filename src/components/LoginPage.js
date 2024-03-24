@@ -28,7 +28,7 @@ const LoginPage = ({ showModal, setShowModal }) => {
           <line x1="2.32593" y1="27.2588" x2="25.5847" y2="4" stroke="black" strokeWidth="3.87671" strokeLinecap="round"/>
           </svg>
         </button>
-        <p>Log in to post a job on Startup Jobs Italia!</p>
+          <p>Log in <span>or</span> Sign Up</p>
         <Auth
          redirectTo="https://startupjobsitalia.com/"
         appearance={{

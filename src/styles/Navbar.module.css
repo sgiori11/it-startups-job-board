@@ -4,16 +4,15 @@
     margin: 0;
     padding: 0;
     width: auto;
-    margin: 0 2em;
+    margin: 0 2rem;
     font-size: 16px;
-
 }
 
 
 .nav {
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.95);
     z-index: 1000 !important;
     position: sticky;
     top: 0;
@@ -44,19 +43,19 @@
 
 
 .loginBtn {
-    border: 2px solid #FC62FF;
-    color: black;
-    background-color: white;
-    font-weight: 700;
-    padding: 0.7em 2.5em;
+    color: white;
+    background-color: #0B0909;
+    padding: 0.5rem 2rem;
     cursor: pointer;
-    border-radius: 2px;
     margin-right: 2em;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: 0.2s ease-in-out;
+    border-radius: 4px;
 }
 
 .loginBtn:hover {
     background-color: #FC62FF;
-    color: white;
     transition: 0.2s all ease;
 }
 

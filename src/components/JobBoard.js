@@ -24,7 +24,7 @@ const handleSearch = async (e) => {
   if (error) {
     console.log(error); 
     return;
-  }
+  } 
 
   setSearchResults(data);
 };

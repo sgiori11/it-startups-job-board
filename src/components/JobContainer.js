@@ -31,22 +31,20 @@ const JobContainer = ({ job }) => {
     return (
         <div className={styles.container}>
             <div className={styles.logoContainer} 
-                style={{ position: 'relative', width: '150px', height: '150px'}}>
+                style={{ position: 'relative', width: '60px', height: '60px'}}>
                 <Image fill
                 style={{ objectFit: "contain", width: '100%', height: '100%'}}
                 src={`https://hewqsbwtsubfefrjhlol.supabase.co/storage/v1/object/public/logos/${job.logo_url}`}
                 alt="logo"
                 />
              </div>
-        
-          
             <div className={styles.sectionOne}>
                 <h3 className={styles.jobTitle}>
                     {job.job_title}
                 </h3>
                 <div className={styles.dateInfoCont}>
                     <h4 className={styles.companyName}>
-                        @ {job.company_name}
+                    📍 {job.company_name} -  {job.location}
                     </h4>
                     <p className={styles.postedOn}>
                         {formattedDate}
@@ -56,18 +54,12 @@ const JobContainer = ({ job }) => {
                     {job.summary}
                 </p>
             </div>
-
             <div className={styles.sectionTwo}>
-                <p className={styles.jobLoc}>
-                    {job.location}
-                </p>
                 <div className={styles.tags}>
-                    <p className={styles.tag}>#{job.contract_type}</p>
-                    <p className={styles.tag}>{job.tag_one ? ('#' + job.tag_one) : ''}</p>
-                    <p className={styles.tag}>{job.tag_two ? ('#' + job.tag_two) : ''}</p>
-                    <p className={styles.tag}>{job.tag_three ? ('#' + job.tag_three) : ''}</p>
+                     {job.tag_one && <p className={styles.tag}>{job.tag_one}</p>}
+                    {job.tag_two && <p className={styles.tag}>{job.tag_two}</p>}
+                    {job.tag_three && <p className={styles.tag}>{job.tag_three}</p>}
                 </div>
-         
          </div>
         </div>
     )

@@ -18,7 +18,7 @@
 .loginContainer {
     position: relative;
     background-color: white;
-    min-width: 300px;
+    min-width: 400px;
     padding: 2em;
     max-width: 450px;
     border-radius: 4px;
@@ -38,9 +38,13 @@
 }
 
 .loginContainer p {
-    font-size: 1.8em;
+    font-size: 1.4rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
+}
+
+.loginContainer span {
+    color: #606060;
 }
 
 .button {
@@ -113,6 +117,13 @@
         font-size: 1.5em;
         text-align: center;
         font-weight: 600;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    .loginContainer {
+        min-width: 350px;
     }
 
 }

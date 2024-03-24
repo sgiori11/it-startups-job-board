@@ -14,7 +14,7 @@ export default function NavBar() {
   const [showModal, setShowModal] = useState(false);
   const { user } = useUser();
 
-
+ 
 useEffect(() => {
     if (user) {
       setShowModal(false);

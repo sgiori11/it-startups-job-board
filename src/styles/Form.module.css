@@ -351,10 +351,6 @@
     min-height: 200px;
   }
 
-  .stepThreeSection div {
-    text-align: center;
-  }
-
   .buttonsContainer {
     display: flex;
     justify-content: space-between;
