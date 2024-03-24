@@ -38,9 +38,13 @@
 }
 
 .loginContainer p {
-    font-size: 1.8em;
+    font-size: 1.4rem;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
+}
+
+.loginContainer span {
+    color: #606060;
 }
 
 .button {

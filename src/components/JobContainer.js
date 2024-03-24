@@ -56,8 +56,8 @@ const JobContainer = ({ job }) => {
             </div>
             <div className={styles.sectionTwo}>
                 <div className={styles.tags}>
-                     {job.tag_three && <p className={styles.tag}>{job.tag_three}</p>}
-                    {job.tag_three && <p className={styles.tag}>{job.tag_three}</p>}
+                     {job.tag_one && <p className={styles.tag}>{job.tag_one}</p>}
+                    {job.tag_two && <p className={styles.tag}>{job.tag_two}</p>}
                     {job.tag_three && <p className={styles.tag}>{job.tag_three}</p>}
                 </div>
          </div>
