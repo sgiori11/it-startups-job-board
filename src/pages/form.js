@@ -41,11 +41,11 @@ export default function Form() {
     const [errorMessage, setErrorMessage] = useState('');
  
    
-    useEffect(() => {
-      //can only use router on client-side
-      if (!user) {
+   useEffect(() => {
+     // can only use router on client-side
+     if (!user) {
         console.log("no user found for form page")
-        router.push('/');
+       router.push('/');
      }
     }, [user]);
 

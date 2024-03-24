@@ -93,7 +93,7 @@ export default function JobPost({ job }) {
                     {job.location}
                 </p>
                 <div className={styles.moduleTags}>
-                    <p className={styles.tag}>#{job.contract_type}</p>
+                    <p className={styles.tag}>{job.contract_type}</p>
                     {job.tag_one && <p className={styles.tag}>{job.tag_one}</p>}
                     {job.tag_two && <p className={styles.tag}>{job.tag_two}</p>}
                     {job.tag_three && <p className={styles.tag}>{job.tag_three}</p>}

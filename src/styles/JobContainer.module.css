@@ -31,18 +31,20 @@
 
 .previewContainer {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #EFEFEF;
-    -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
-    box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.25);
-    border-radius: 5px;
-    min-height: 180px;
+    display: grid;
+    grid-template-areas: 
+    "logo about"
+    ". tags";
+    grid-template-columns: auto 1fr;
+    column-gap: 1.2rem;
     background-color: white;
-    margin: 0.5em 0em 3em 0;
-    padding: 1em;
-    width: 100%;
+    margin: 0.5em 0;
+    padding: 1rem;
+    border: 1px solid #A994FF;
+   -webkit-box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.15);
+    box-shadow: 0px 2px 23px -9px rgba(101, 101, 101, 0.15);
+    border-radius: 12px;
+    margin-bottom: 5rem;
 }
 
 .companyLogo {
